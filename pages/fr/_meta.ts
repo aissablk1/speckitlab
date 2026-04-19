@@ -1,12 +1,11 @@
-{
+export default {
   "index": "Introduction",
-  "getting-started": "Getting started",
+  "getting-started": "Démarrage",
   "concepts": "Concepts",
   "templates": "Templates",
-  "404": { "display": "hidden" },
   "-- links": {
     "type": "separator",
-    "title": "Links"
+    "title": "Liens"
   },
   "github": {
     "title": "GitHub ›",

@@ -17,28 +17,29 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/aissablk1/speckitlab',
   },
   docsRepositoryBase: 'https://github.com/aissablk1/speckitlab/tree/main',
-  i18n: [
-    { locale: 'en', name: 'English' },
-    { locale: 'fr', name: 'Français' },
-  ],
   footer: {
     content: function Footer() {
-      const { locale } = useRouter()
+      const { asPath } = useRouter()
+      const isFr = asPath.startsWith('/fr')
       return (
-        <span style={{ fontSize: '0.875rem' }}>
-          MIT {new Date().getFullYear()} © Aïssa Belkoussa
-          {'\u00A0\u2014\u00A0'}
-          {locale === 'fr' ? 'Construit avec Spec-Kit.' : 'Built with Spec-Kit.'}
+        <span style={{ fontSize: '0.875rem', display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+          <span>MIT {new Date().getFullYear()} © Aïssa Belkoussa</span>
+          <span style={{ opacity: 0.4 }}>{'\u00B7'}</span>
+          <span>{isFr ? 'Construit avec Spec-Kit' : 'Built with Spec-Kit'}</span>
+          <span style={{ opacity: 0.4 }}>{'\u00B7'}</span>
+          <a href={isFr ? '/' : '/fr'} style={{ color: 'inherit', textDecoration: 'underline', textDecorationColor: 'oklch(70% 0.15 230 / 0.4)' }}>
+            {isFr ? 'English\u00A0\u203A' : 'Français\u00A0\u203A'}
+          </a>
         </span>
       )
     },
   },
   head: function Head() {
-    const { locale } = useRouter()
-    const desc =
-      locale === 'fr'
-        ? 'Lab Spec-Driven Development — templates, guides et patterns d\u2019intégration Claude Code pour l\u2019écosystème JavaScript.'
-        : 'Spec-Driven Development lab — templates, guides, and Claude Code integration patterns for the JavaScript ecosystem.'
+    const { asPath } = useRouter()
+    const isFr = asPath.startsWith('/fr')
+    const desc = isFr
+      ? 'Lab Spec-Driven Development — templates, guides et patterns d\u2019intégration Claude Code pour l\u2019écosystème JavaScript.'
+      : 'Spec-Driven Development lab — templates, guides, and Claude Code integration patterns for the JavaScript ecosystem.'
     return (
       <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -65,8 +66,8 @@ const config: DocsThemeConfig = {
   nextThemes: { defaultTheme: 'system' },
   editLink: {
     content: function EditLink() {
-      const { locale } = useRouter()
-      return locale === 'fr' ? (
+      const { asPath } = useRouter()
+      return asPath.startsWith('/fr') ? (
         <>Modifier cette page sur GitHub{'\u00A0\u203A'}</>
       ) : (
         <>Edit this page on GitHub{'\u00A0\u203A'}</>
@@ -76,8 +77,8 @@ const config: DocsThemeConfig = {
   feedback: { content: null },
   search: {
     placeholder: function Placeholder() {
-      const { locale } = useRouter()
-      return locale === 'fr' ? 'Rechercher dans la doc\u2026' : 'Search documentation\u2026'
+      const { asPath } = useRouter()
+      return asPath.startsWith('/fr') ? 'Rechercher dans la doc\u2026' : 'Search documentation\u2026'
     },
   },
   gitTimestamp: null,
