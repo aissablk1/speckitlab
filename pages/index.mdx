@@ -1,0 +1,60 @@
+---
+title: "speckitlab — Spec-Driven Development for JavaScript + Claude Code"
+description: "A practical lab for Spec-Driven Development in the JavaScript ecosystem, with templates, guides, and Claude Code integration patterns."
+---
+
+import { Callout, Cards, Steps } from 'nextra/components'
+
+# speckitlab
+
+**Spec-Driven Development (SDD) for the JavaScript ecosystem, paired with Claude Code.**
+
+A practical lab with ready-to-use templates, opinionated guides, and real examples — so you can go from blank page to shipped feature without the usual page-blanche paralysis.
+
+<Callout type="info">
+  This project is **dogfooded**: everything you see was built using the very specs you can read in [`specs/mvp-launch/`](https://github.com/aissablk1/speckitlab/tree/main/specs/mvp-launch).
+</Callout>
+
+## Why another SDD resource?
+
+The [official Spec-Kit](https://github.com/github/spec-kit) is Python-centric. Most SDD content online is textual, dispersed, or tied to a single agent framework. speckitlab fills that gap for JavaScript/TypeScript teams who want:
+
+- A **single hub** with templates they can copy-paste today
+- **Real examples** (not toy projects) showing the `spec → plan → tasks` flow
+- A clear **Claude Code integration** guide, because that's where SDD becomes a superpower
+
+## What you'll find here
+
+<Cards>
+  <Cards.Card title="Getting started ›" href="/getting-started" />
+  <Cards.Card title="Your first spec ›" href="/concepts/first-spec" />
+  <Cards.Card title="Claude Code integration ›" href="/concepts/claude-code-integration" />
+</Cards>
+
+## The 3-artefact loop
+
+<Steps>
+
+### `spec.md` — the *what*
+
+User stories, acceptance criteria, non-goals, metrics. Survives refactors.
+
+### `plan.md` — the *how*
+
+Stack choices, architecture, data contracts, security posture. Evolves with the project.
+
+### `tasks.md` — the *steps*
+
+Atomic, verifiable, traceable back to an acceptance criterion. This is what you hand to Claude Code.
+
+</Steps>
+
+## Who this is for
+
+- **Solo devs** starting a new project and tired of page-blanche paralysis
+- **Tech leads** structuring team work around AI agents
+- **Trainers & consultants** looking for reusable pedagogical material
+
+## Status
+
+V1 is a living document. Expect weekly additions. Issues and PRs are welcome — see [CONTRIBUTING](https://github.com/aissablk1/speckitlab/blob/main/CONTRIBUTING.md).

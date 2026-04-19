@@ -1,0 +1,46 @@
+{
+  "name": "speckitlab",
+  "version": "0.1.0",
+  "description": "Spec-Driven Development lab — templates, guides, and Claude Code integration patterns for the JavaScript ecosystem.",
+  "license": "MIT",
+  "author": "Aïssa Belkoussa",
+  "homepage": "https://speckitlab.js.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aissablk1/speckitlab.git"
+  },
+  "keywords": [
+    "spec-kit",
+    "spec-driven-development",
+    "claude-code",
+    "ai-coding",
+    "documentation",
+    "nextra",
+    "javascript",
+    "typescript"
+  ],
+  "private": false,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "nextra": "^3.3.1",
+    "nextra-theme-docs": "^3.3.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
