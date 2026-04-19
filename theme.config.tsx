@@ -6,6 +6,10 @@ const config: DocsThemeConfig = {
       speckit<span style={{ opacity: 0.6 }}>lab</span>
     </span>
   ),
+  project: {
+    link: 'https://github.com/aissablk1/speckitlab',
+  },
+  docsRepositoryBase: 'https://github.com/aissablk1/speckitlab/tree/main',
   footer: {
     content: (
       <span>
@@ -37,11 +41,10 @@ const config: DocsThemeConfig = {
   toc: { backToTop: true },
   darkMode: true,
   nextThemes: { defaultTheme: 'system' },
-  editLink: { component: null },
-  feedback: { content: null },
-  navbar: {
-    extraContent: null,
+  editLink: {
+    content: <>Modifier cette page sur GitHub{'\u00A0\u203A'}</>,
   },
+  feedback: { content: null },
 }
 
 export default config

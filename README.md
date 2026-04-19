@@ -6,7 +6,7 @@
 [![Built with Nextra](https://img.shields.io/badge/Built%20with-Nextra%203-black)](https://nextra.site)
 [![Dogfooded](https://img.shields.io/badge/dogfooded-%E2%9C%93-brightgreen)](./specs/mvp-launch)
 
-**Live:** [speckitlab.vercel.app](https://speckitlab.vercel.app)
+**Live:** [speckitlab.vercel.app](https://speckitlab.vercel.app) — custom domain pending.
 
 ---
 
