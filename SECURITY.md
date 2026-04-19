@@ -1,5 +1,7 @@
 # Security policy
 
+*[Version française ›](./SECURITY.fr.md)*
+
 ## Supported versions
 
 Only the `main` branch is supported. Older tags / historical builds may contain unpatched issues.

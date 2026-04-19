@@ -1,5 +1,7 @@
 # Contributing to speckitlab
 
+*[Version française ›](./CONTRIBUTING.fr.md)*
+
 Thanks for considering a contribution. This project grows through real-world examples, so your voice is welcome.
 
 ## Ways to contribute

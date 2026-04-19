@@ -8,6 +8,8 @@
 
 **Live:** [speckitlab.vercel.app](https://speckitlab.vercel.app) — custom domain pending.
 
+*[Version française ›](./README.fr.md)*
+
 ---
 
 ## What is this?

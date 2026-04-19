@@ -1,63 +1,144 @@
 ---
 title: "speckitlab — Spec-Driven Development pour JavaScript + Claude Code"
 description: "Un lab pratique de Spec-Driven Development pour l'écosystème JavaScript, avec templates, guides et patterns d'intégration Claude Code."
+layout: "full"
 ---
 
-import { Callout, Cards, Steps } from 'nextra/components'
-import { Hero } from '../components/Hero'
+import { HeroV2 } from '../components/HeroV2'
+import { LoopFlow } from '../components/LoopFlow'
+import { Marquee } from '../components/Marquee'
+import { Personas } from '../components/Personas'
+import { Stats } from '../components/Stats'
+import { BigCTA } from '../components/BigCTA'
 
-<Hero
-  eyebrow="Spec-Driven Development"
+<HeroV2
+  eyebrow="EN DIRECT\u00A0·\u00A0SPEC-DRIVEN DEVELOPMENT"
   title={<>Livrer des features avec <em>intention</em>,<br/>pas à l'improvisation.</>}
   subtitle="Templates, guides et patterns d'intégration Claude Code pour l'écosystème JavaScript — pour passer de la page blanche à la feature livrée sans la paralysie habituelle."
   primary={{ label: 'Commencer\u00A0\u203A', href: '/getting-started' }}
   secondary={{ label: 'Voir sur GitHub\u00A0\u203A', href: 'https://github.com/aissablk1/speckitlab' }}
+  beforeLabel="// sans specs"
+  afterLabel="// spec.md"
+  chaosLines={[
+    'idée : un toggle dark mode, non ?',
+    'TODO : demander à l\u2019équipe — urgent ?',
+    'peut-être useState ? CSS var ? data-attr ?',
+    'Figma dit bleu mais en vrai c\u2019est gris ? flash ?',
+    'livraison vendredi — ou lundi ? zéro dépendance backend.',
+  ]}
+  specLines={[
+    { k: '# Problème', v: 'Le premier paint affiche le mauvais thème → fatigue oculaire.' },
+    { k: '# AC-1', v: 'Le paint respecte la préférence système au chargement.' },
+    { k: '# Non-objectif', v: 'Pas une refonte totale des design tokens.' },
+    { k: '# Métrique', v: 'CLS < 0.02 sur toutes les routes.' },
+  ]}
 />
 
-<Callout type="info">
-  Ce projet est **dogfoodé** : tout ce que vous voyez a été construit à partir des specs visibles dans [`specs/mvp-launch/`](https://github.com/aissablk1/speckitlab/tree/main/specs/mvp-launch).
-</Callout>
+<Marquee
+  items={[
+    'Spec-Driven Development',
+    'Claude Code',
+    'JavaScript',
+    'TypeScript',
+    'Next.js',
+    'Remix',
+    'Astro',
+    'Bun',
+    'Deno',
+    'MDX',
+    'spec.md\u00A0→\u00A0plan.md\u00A0→\u00A0tasks.md',
+  ]}
+/>
 
-## Pourquoi encore une ressource SDD ?
+<LoopFlow
+  kicker="La boucle des 3 artefacts"
+  heading="Trois fichiers. Une seule source de vérité."
+  artefacts={[
+    {
+      file: 'spec.md',
+      title: 'Le quoi',
+      tagline: "Problème, audience, critères d'acceptation, non-objectifs.",
+      bullets: [
+        'Survit aux refactors et aux pivots de stack',
+        '8 sections canoniques dans un ordre fixe',
+        'Chaque AC est testable par quelque chose de concret',
+      ],
+    },
+    {
+      file: 'plan.md',
+      title: 'Le comment',
+      tagline: 'Choix de stack, architecture, contrats de données, sécurité.',
+      bullets: [
+        'Argumente chaque décision non-triviale en une phrase',
+        'Rend les trade-offs explicites — aucune supposition cachée',
+        'Évolue avec le projet (contrairement à la spec)',
+      ],
+    },
+    {
+      file: 'tasks.md',
+      title: 'Les étapes',
+      tagline: 'Atomiques, vérifiables, traçables vers un AC.',
+      bullets: [
+        'Chaque tâche est réalisable en ≤ 30 minutes',
+        "Référence l'AC qu'elle satisfait",
+        "C'est ce que vous passez à Claude Code",
+      ],
+    },
+  ]}
+/>
 
-Le [Spec-Kit officiel](https://github.com/github/spec-kit) est Python-centrique. Le contenu SDD en ligne est textuel, dispersé, ou lié à un framework d'agent particulier. speckitlab comble ce vide pour les équipes JavaScript/TypeScript qui veulent :
+<Personas
+  kicker="Pensé pour"
+  heading="Trois profils qui livrent plus vite avec ça."
+  items={[
+    {
+      icon: '\u{1D480}',
+      title: 'Devs solo',
+      lead: 'Tuez la paralysie de la page blanche sur chaque nouveau projet.',
+      points: [
+        "Templates copiables-collables en 60 secondes",
+        'Structure éprouvée, zéro cérémonial',
+        'Passage instantané à Claude Code',
+      ],
+    },
+    {
+      icon: '\u{1D481}',
+      title: 'Tech leads',
+      lead: 'Donnez à votre équipe un langage commun pour le travail avec IA.',
+      points: [
+        'Specs cohérentes entre features',
+        'Artefacts revuables à chaque PR',
+        'Onboarding divisé par deux',
+      ],
+    },
+    {
+      icon: '\u{1D482}',
+      title: 'Formateurs & consultants',
+      lead: 'Matériel réutilisable pour ateliers et missions clients.',
+      points: [
+        'Exemples réels, pas de toy projects',
+        'Contenu bilingue FR/EN',
+        'MIT — emportez-le partout',
+      ],
+    },
+  ]}
+/>
 
-- Un **hub unique** avec des templates copiables-collables aujourd'hui
-- De **vrais exemples** (pas des toy projects) montrant le flux `spec → plan → tasks`
-- Un guide clair d'**intégration Claude Code**, parce que c'est là que le SDD devient une superpuissance
+<Stats
+  kicker="Métriques qui comptent"
+  heading="Pourquoi les équipes restent sur le SDD."
+  items={[
+    { value: '3', label: 'Artefacts par feature', hint: 'spec, plan, tasks — pas plus, pas moins.' },
+    { value: '8', label: 'Sections canoniques de spec', hint: "Sautez-en une et vous sautez la réflexion." },
+    { value: '≤30m', label: 'Durée max d\u2019une tâche', hint: 'Plus grand, ça se découpe. Sans exception.' },
+    { value: '100%', label: 'Dogfoodé', hint: 'Ce site a été construit à partir de ses propres specs.' },
+  ]}
+/>
 
-## Ce que vous trouverez ici
-
-<Cards>
-  <Cards.Card title="Démarrage ›" href="/getting-started" />
-  <Cards.Card title="Votre première spec ›" href="/concepts/first-spec" />
-  <Cards.Card title="Intégration Claude Code ›" href="/concepts/claude-code-integration" />
-</Cards>
-
-## La boucle des 3 artefacts
-
-<Steps>
-
-### `spec.md` — le *quoi*
-
-User stories, critères d'acceptation, non-objectifs, métriques. Survit aux refactors.
-
-### `plan.md` — le *comment*
-
-Choix de stack, architecture, contrats de données, posture de sécurité. Évolue avec le projet.
-
-### `tasks.md` — les *étapes*
-
-Atomiques, vérifiables, traçables vers un critère d'acceptation. C'est ce que vous passez à Claude Code.
-
-</Steps>
-
-## Pour qui ?
-
-- **Devs solo** qui démarrent un nouveau projet et en ont assez de la paralysie de la page blanche
-- **Tech leads** qui structurent le travail d'équipe autour des agents IA
-- **Formateurs & consultants** cherchant du matériel pédagogique réutilisable
-
-## Statut
-
-La V1 est un document vivant. Attendez-vous à des ajouts hebdomadaires. Issues et PRs bienvenues — voir [CONTRIBUTING](https://github.com/aissablk1/speckitlab/blob/main/CONTRIBUTING.md).
+<BigCTA
+  kicker="Prêt quand vous l'êtes"
+  heading="Arrêtez de vous disputer avec la page blanche."
+  subtitle="Copiez les templates, écrivez votre première spec en 20 minutes, passez-la à Claude Code, livrez."
+  primary={{ label: 'Écrire votre première spec\u00A0\u203A', href: '/getting-started' }}
+  secondary={{ label: 'Voir un vrai exemple\u00A0\u203A', href: '/concepts/first-spec' }}
+/>

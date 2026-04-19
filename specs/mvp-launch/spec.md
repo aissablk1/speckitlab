@@ -1,86 +1,88 @@
 # Spec — MVP Launch
 
-> **Statut** : active
-> **Auteur** : Aïssa Belkoussa
-> **Créée le** : 2026-04-19
-> **Dernière mise à jour** : 2026-04-19
+> **Status**: active
+> **Author**: Aïssa Belkoussa
+> **Created**: 2026-04-19
+> **Last updated**: 2026-04-20
+>
+> *[Version française ›](./spec.fr.md)*
 
 ---
 
-## 1. Problème
+## 1. Problem
 
-Les équipes qui utilisent Claude Code ou d'autres agents IA dans leur workflow manquent d'un **référentiel opérationnel** pour pratiquer le *Spec-Driven Development* (SDD) côté JavaScript/TypeScript. Les ressources existantes sont :
+Teams using Claude Code or other AI agents in their workflow lack an **operational reference** to practice *Spec-Driven Development* (SDD) on the JavaScript side. Existing resources are:
 
-- **Textuelles** (articles de blog, tweets) — pas réutilisables tels quels
-- **Python-centriques** (Spec-Kit originel de GitHub)
-- **Dispersées** — pas de hub unique avec templates, exemples, guides
+- **Textual** (blog posts, tweets) — not reusable as-is
+- **Python-centric** (original GitHub Spec-Kit)
+- **Scattered** — no single hub with templates, examples, guides
 
-**Conséquence** : les devs JS qui veulent adopter Spec-Kit copient-collent, réinventent, abandonnent.
+**Consequence**: JS devs who want to adopt Spec-Kit copy-paste, reinvent, or abandon.
 
 ## 2. Audience
 
-| Persona | Besoin | Usage |
+| Persona | Need | Usage |
 |---|---|---|
-| Dev solo JS/TS | Démarrer un projet propre avec une méthodologie claire | Cloner un template, lire 2 guides, appliquer |
-| Tech lead | Structurer le travail d'équipe avec IA | Adopter les conventions, former son équipe |
-| Formateur / consultant | Matériel pédagogique réutilisable | Réutiliser les exemples et specs |
+| Solo JS/TS dev | Start a clean project with a clear method | Clone a template, read 2 guides, apply |
+| Tech lead | Structure team work with AI | Adopt the conventions, train the team |
+| Trainer / consultant | Reusable pedagogical material | Reuse the examples and specs |
 
 ## 3. User Stories
 
-### US-1 — Démarrer une feature avec une spec
-> *En tant que dev*, je veux un template `spec.md` prêt à remplir, *afin de* cadrer une feature en 15 minutes sans page blanche.
+### US-1 — Start a feature with a spec
+> *As a dev*, I want a ready-to-fill `spec.md` template, *so that* I can scope a feature in 15 minutes without blank-page paralysis.
 
-### US-2 — Comprendre la chaîne spec → plan → tasks
-> *En tant que dev qui découvre SDD*, je veux un exemple complet qui relie les 3 documents sur un cas concret, *afin de* visualiser le workflow.
+### US-2 — Understand the spec → plan → tasks chain
+> *As a dev discovering SDD*, I want a complete example wiring the 3 documents on a concrete case, *so that* I can visualise the workflow.
 
-### US-3 — Intégrer Claude Code
-> *En tant qu'utilisateur Claude Code*, je veux un guide qui montre comment faire lire les specs à l'agent et itérer, *afin de* maximiser la qualité du code généré.
+### US-3 — Integrate Claude Code
+> *As a Claude Code user*, I want a guide showing how to feed specs to the agent and iterate, *so that* I maximise the quality of the generated code.
 
-## 4. Critères d'acceptation (AC)
+## 4. Acceptance criteria (AC)
 
-| # | Critère | Testable par |
+| # | Criterion | Testable by |
 |---|---|---|
-| AC-1 | Le site est accessible à une URL publique HTTPS | `curl -I` retourne 200 |
-| AC-2 | La page d'accueil explique le projet en < 5 phrases | Review manuelle |
-| AC-3 | Au minimum 3 guides publiés (`getting-started`, `first-spec`, `claude-code-integration`) | `ls pages/*.mdx` |
-| AC-4 | Au minimum 3 templates disponibles (`spec`, `plan`, `tasks`) | `ls content/templates/` |
-| AC-5 | Le repo est public sur GitHub avec License MIT | Vérifier GitHub |
-| AC-6 | Score Lighthouse ≥ 95 sur perf / accessibility / SEO / best-practices | `npx lighthouse` |
-| AC-7 | Le site respecte `prefers-reduced-motion` et WCAG AA | Audit a11y |
-| AC-8 | Pas de secret exposé côté client | Audit `grep -r "NEXT_PUBLIC_"` |
+| AC-1 | The site is reachable at a public HTTPS URL | `curl -I` returns 200 |
+| AC-2 | The home explains the project in < 5 sentences | Manual review |
+| AC-3 | At least 3 guides published (`getting-started`, `first-spec`, `claude-code-integration`) | `ls pages/*.mdx` |
+| AC-4 | At least 3 templates available (`spec`, `plan`, `tasks`) | `ls content/templates/` |
+| AC-5 | The repo is public on GitHub with MIT license | Check GitHub |
+| AC-6 | Lighthouse ≥ 95 on perf / accessibility / SEO / best-practices | `npx lighthouse` |
+| AC-7 | The site respects `prefers-reduced-motion` and WCAG AA | a11y audit |
+| AC-8 | No secret exposed client-side | Audit `grep -r "NEXT_PUBLIC_"` |
 
-## 5. Contraintes
+## 5. Constraints
 
-- **Stack** : Next.js 15 + Nextra 3 + React 19 — cohérent avec la stack de l'auteur
-- **Zéro donnée mockée** : tous les exemples pointent vers des repos réels ou des cas production
-- **Accessibilité** : WCAG AA minimum, pas de contenu réservé à un mode (dark-only / light-only)
-- **Performance** : LCP < 1.5s, CLS < 0.1, TTFB < 200ms sur Vercel Edge
-- **SEO** : canonical URL, OG meta, sitemap, robots.txt
-- **Budget** : 0 € récurrent (domaine js.org gratuit, hébergement Vercel Hobby)
+- **Stack**: Next.js 15 + Nextra 3 + React 19 — consistent with author's stack
+- **Zero mocked data**: every example points to real repos or production cases
+- **Accessibility**: WCAG AA minimum, no mode-restricted content (dark-only / light-only)
+- **Performance**: LCP < 1.5s, CLS < 0.1, TTFB < 200ms on Vercel Edge
+- **SEO**: canonical URL, OG meta, sitemap, robots.txt
+- **Budget**: 0 € recurring (js.org free, Vercel Hobby hosting)
 
-## 6. Non-objectifs (explicitement hors scope)
+## 6. Non-goals (explicitly out of scope)
 
-- Pas de compte utilisateur / auth
-- Pas de CMS / backoffice (Markdown/MDX suffit)
-- Pas d'API publique (le site est statique)
-- Pas de traductions multilingues dans la V1 (FR ou EN only, à trancher)
-- Pas de CLI npm installable dans la V1 (prévu V2 si traction)
+- No user account / auth
+- No CMS / backoffice (Markdown/MDX is enough)
+- No public API (the site is static)
+- Multilingual support limited to EN + FR in V1
+- No installable npm CLI in V1 (planned V2 if traction)
 
-## 7. Métriques de succès
+## 7. Success metrics
 
-| Indicateur | Cible à 3 mois | Cible à 6 mois |
+| Indicator | Target at 3 months | Target at 6 months |
 |---|---|---|
-| Pages vues / mois | 1 000 | 5 000 |
-| Stars GitHub | 20 | 100 |
-| Domaine js.org accepté | oui | — |
-| Mentions externes (blog, twitter) | 3 | 15 |
-| Leads CCA-F générés | 1 | 5 |
+| Page views / month | 1,000 | 5,000 |
+| GitHub stars | 20 | 100 |
+| js.org domain accepted | yes | — |
+| External mentions (blog, twitter) | 3 | 15 |
+| CCA-F leads generated | 1 | 5 |
 
-## 8. Risques
+## 8. Risks
 
-| Risque | Probabilité | Impact | Mitigation |
+| Risk | Probability | Impact | Mitigation |
 |---|---|---|---|
-| PR js.org refusée | Moyenne | Élevé | Démarrer sur `is-a.dev` en parallèle, renforcer le contenu avant soumission |
-| Nextra 3 deprecated rapidement | Faible | Moyen | Migration Nextra 4 prévue si besoin, contenu MDX portable |
-| Confusion avec Spec-Kit officiel (GitHub) | Moyenne | Faible | Clarifier dans la home : "JS companion", pas de fork |
-| Charge éditoriale trop lourde | Moyenne | Moyen | Publier 1 guide / semaine max, pas de pression |
+| js.org PR refused | Medium | High | Start on `is-a.dev` in parallel, reinforce content before submission |
+| Nextra 3 deprecated fast | Low | Medium | Nextra 4 migration planned if needed, MDX content is portable |
+| Confusion with the official Spec-Kit (GitHub) | Medium | Low | Clarify in the home: "JS companion", not a fork |
+| Editorial load too heavy | Medium | Medium | Publish 1 guide / week max, no pressure |
