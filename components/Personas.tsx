@@ -1,5 +1,7 @@
+import type { ReactNode } from 'react'
+
 type Persona = {
-  icon: string
+  icon: ReactNode
   title: string
   lead: string
   points: string[]
@@ -34,4 +36,29 @@ export function Personas({ kicker, heading, items }: PersonasProps) {
       </div>
     </section>
   )
+}
+
+export const PersonaIcons = {
+  Solo: (
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="8" r="3.5" />
+      <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" />
+    </svg>
+  ),
+  Team: (
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="9" cy="8" r="3" />
+      <circle cx="17" cy="9" r="2.5" />
+      <path d="M3 20c0-3 2.5-5 6-5s6 2 6 5" />
+      <path d="M14 20c0-2.5 1.5-4 4-4s3.5 1.2 3.5 4" />
+    </svg>
+  ),
+  Trainer: (
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 6h16v10H4z" />
+      <path d="M8 20h8" />
+      <path d="M12 16v4" />
+      <path d="M8 10l2 2 5-5" />
+    </svg>
+  ),
 }

@@ -3,6 +3,7 @@
   "getting-started": "Démarrage",
   "concepts": "Concepts",
   "templates": "Templates",
+  "404": { "display": "hidden" },
   "-- links": {
     "type": "separator",
     "title": "Liens"

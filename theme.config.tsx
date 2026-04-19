@@ -28,9 +28,7 @@ const config: DocsThemeConfig = {
         <span style={{ fontSize: '0.875rem' }}>
           MIT {new Date().getFullYear()} © Aïssa Belkoussa
           {'\u00A0\u2014\u00A0'}
-          {locale === 'fr'
-            ? 'Construit avec Spec-Kit.'
-            : 'Built with Spec-Kit.'}
+          {locale === 'fr' ? 'Construit avec Spec-Kit.' : 'Built with Spec-Kit.'}
         </span>
       )
     },
@@ -39,20 +37,18 @@ const config: DocsThemeConfig = {
     const { locale } = useRouter()
     const desc =
       locale === 'fr'
-        ? 'Lab Spec-Driven Development — templates, guides, et patterns d\u2019intégration Claude Code pour l\u2019écosystème JavaScript.'
+        ? 'Lab Spec-Driven Development — templates, guides et patterns d\u2019intégration Claude Code pour l\u2019écosystème JavaScript.'
         : 'Spec-Driven Development lab — templates, guides, and Claude Code integration patterns for the JavaScript ecosystem.'
-    const title = 'speckitlab'
     return (
       <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={desc} />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content="speckitlab" />
         <meta property="og:description" content={desc} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://speckitlab.vercel.app" />
-        <meta property="og:image" content="https://speckitlab.vercel.app/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
+        <meta name="twitter:title" content="speckitlab" />
         <meta name="twitter:description" content={desc} />
         <meta name="theme-color" content="#0a0a0a" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

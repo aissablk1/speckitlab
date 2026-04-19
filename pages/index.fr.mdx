@@ -1,22 +1,23 @@
 ---
-title: "speckitlab — Spec-Driven Development pour JavaScript + Claude Code"
-description: "Un lab pratique de Spec-Driven Development pour l'écosystème JavaScript, avec templates, guides et patterns d'intégration Claude Code."
+title: "speckitlab"
+sidebarTitle: "Introduction"
+description: "Lab Spec-Driven Development pour l'écosystème JavaScript — templates, guides et patterns d'intégration Claude Code."
 layout: "full"
 ---
 
 import { HeroV2 } from '../components/HeroV2'
 import { LoopFlow } from '../components/LoopFlow'
 import { Marquee } from '../components/Marquee'
-import { Personas } from '../components/Personas'
+import { Personas, PersonaIcons } from '../components/Personas'
 import { Stats } from '../components/Stats'
 import { BigCTA } from '../components/BigCTA'
 
 <HeroV2
-  eyebrow="EN DIRECT\u00A0·\u00A0SPEC-DRIVEN DEVELOPMENT"
+  eyebrow={"EN DIRECT\u00A0\u00B7\u00A0SPEC-DRIVEN DEVELOPMENT"}
   title={<>Livrer des features avec <em>intention</em>,<br/>pas à l'improvisation.</>}
   subtitle="Templates, guides et patterns d'intégration Claude Code pour l'écosystème JavaScript — pour passer de la page blanche à la feature livrée sans la paralysie habituelle."
-  primary={{ label: 'Commencer\u00A0\u203A', href: '/getting-started' }}
-  secondary={{ label: 'Voir sur GitHub\u00A0\u203A', href: 'https://github.com/aissablk1/speckitlab' }}
+  primary={{ label: "Commencer\u00A0\u203A", href: '/getting-started' }}
+  secondary={{ label: "Voir sur GitHub\u00A0\u203A", href: 'https://github.com/aissablk1/speckitlab' }}
   beforeLabel="// sans specs"
   afterLabel="// spec.md"
   chaosLines={[
@@ -92,7 +93,7 @@ import { BigCTA } from '../components/BigCTA'
   heading="Trois profils qui livrent plus vite avec ça."
   items={[
     {
-      icon: '\u{1D480}',
+      icon: PersonaIcons.Solo,
       title: 'Devs solo',
       lead: 'Tuez la paralysie de la page blanche sur chaque nouveau projet.',
       points: [
@@ -102,7 +103,7 @@ import { BigCTA } from '../components/BigCTA'
       ],
     },
     {
-      icon: '\u{1D481}',
+      icon: PersonaIcons.Team,
       title: 'Tech leads',
       lead: 'Donnez à votre équipe un langage commun pour le travail avec IA.',
       points: [
@@ -112,7 +113,7 @@ import { BigCTA } from '../components/BigCTA'
       ],
     },
     {
-      icon: '\u{1D482}',
+      icon: PersonaIcons.Trainer,
       title: 'Formateurs & consultants',
       lead: 'Matériel réutilisable pour ateliers et missions clients.',
       points: [
