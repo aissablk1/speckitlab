@@ -1,6 +1,6 @@
 {
   "name": "speckitlab",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Spec-Driven Development lab — templates, guides, and Claude Code integration patterns for the JavaScript ecosystem.",
   "license": "MIT",
   "author": "Aïssa Belkoussa",
@@ -15,30 +15,37 @@
     "claude-code",
     "ai-coding",
     "documentation",
-    "nextra",
+    "starlight",
+    "astro",
     "javascript",
     "typescript"
   ],
   "private": false,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "typecheck": "astro check"
   },
   "dependencies": {
-    "next": "^15.0.0",
-    "nextra": "^3.3.1",
-    "nextra-theme-docs": "^3.3.1",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/starlight": "^0.35.0",
+    "astro": "^5.14.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sharp": "^0.33.5",
+    "typescript": "^5.6.3"
   },
   "devDependencies": {
-    "@types/node": "^22.9.0",
     "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "typescript": "^5.6.3"
+    "@types/react-dom": "^19.0.0"
+  },
+  "overrides": {
+    "@astrojs/sitemap": "3.6.0"
   },
   "engines": {
     "node": ">=20.0.0"

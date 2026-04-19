@@ -1,0 +1,97 @@
+---
+title: "Claude Code integration"
+description: "Feed specs to Claude Code effectively, iterate in tight loops, and get production-ready code with minimal rework."
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+# Claude Code integration
+
+Where Spec-Driven Development becomes a superpower: when you pair it with an agent that reads, plans, and executes from your specs.
+
+<Aside type="tip">
+  Patterns below are written for [Claude Code](https://claude.com/claude-code) but translate to any CLI agent with file access.
+</Aside>
+
+## The core loop
+
+```
+   ┌───────────────────────────────────────────────────┐
+   │                                                   │
+   ▼                                                   │
+spec.md ──► plan.md ──► tasks.md ──► implementation ──┘
+                                         │
+                                         ▼
+                                  review & update specs
+```
+
+Each arrow is a prompt. Each step produces an artefact your next step can verify against.
+
+## Prompt patterns
+
+### Pattern 1 — Spec → Plan
+
+> Read `specs/[feature]/spec.md`. Generate `plan.md` respecting the stack conventions in `CLAUDE.md`. For every non-trivial choice, list 2 alternatives and argue the trade-off in one sentence.
+
+### Pattern 2 — Plan → Tasks
+
+> From `specs/[feature]/plan.md`, generate `tasks.md` as atomic checkboxed tasks. Each task must reference an AC from `spec.md`. Tasks should be completable in ≤ 30 minutes each.
+
+### Pattern 3 — Task execution
+
+> Open `specs/[feature]/tasks.md`. Pick the first unchecked task. Implement it. Before marking `[x]`, verify the referenced AC passes.
+
+### Pattern 4 — Verification
+
+> For each AC in `specs/[feature]/spec.md`, write the verification command or test that proves it passes. Attach the output to `tasks.md` as evidence.
+
+## Living specs
+
+Specs are not write-once. When reality diverges:
+
+
+
+### Flag the divergence
+
+Agent sessions should update the `spec.md` header: `**Dernière mise à jour** : YYYY-MM-DD` and append a `## Changelog` section.
+
+### Keep the rationale
+
+If a non-goal becomes a goal, write **why** (new constraint, user feedback, strategic pivot). Future agents will thank you.
+
+### Sync tasks
+
+When the plan changes, tasks often need regeneration. Don't hand-patch `tasks.md` — regenerate it from the updated `plan.md`.
+
+
+
+## Anti-patterns
+
+### ❌ Dumping everything in a single file
+
+A 5 000-word spec/plan/tasks mush. Agents lose focus, humans lose patience. Keep them separate.
+
+### ❌ Skipping acceptance criteria
+
+Without ACs, the agent guesses what "done" means. You'll reject its output and waste tokens.
+
+### ❌ Vague task granularity
+
+"Implement the feature" isn't a task. "Create `src/hooks/useTheme.ts` with read + write to localStorage and AC-2 coverage" is.
+
+### ❌ Not reading specs back
+
+Before each major session, ask the agent: "Summarise `specs/[feature]/spec.md` and list open tasks." This re-anchors the context.
+
+## Checklist before hitting `enter`
+
+- [ ] The spec is committed on the current branch
+- [ ] `CLAUDE.md` / project instructions are up to date
+- [ ] The agent has access to the real data sources (not mocks)
+- [ ] You've scoped the task to ≤ 30 minutes of work
+- [ ] You have a verification step ready
+
+## See also
+
+- [Getting started](/getting-started/) — bootstrap the conventions
+- [Your first spec](/concepts/first-spec/) — spec-writing deep dive
