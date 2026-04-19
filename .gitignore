@@ -1,20 +1,59 @@
+# Dependencies
 node_modules/
+.pnpm-store/
+
+# Build outputs
 .next/
 out/
-.vercel/
+coverage/
+.turbo/
+tsconfig.tsbuildinfo
+next-env.d.ts
+
+# Environment secrets
 .env
 .env.local
-.env.*.local
-.DS_Store
+.env.development.local
+.env.production.local
+.env.test.local
+.env*.local
+
+# Vercel
+.vercel/
+
+# Logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-.pnpm-store/
-coverage/
-.turbo/
-tsconfig.tsbuildinfo
-next-env.d.ts
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/css.customData.json
+
+# Local backups (never commit)
 _backup/
-.vercel
+
+# Secrets / certs (defensive — no such files today)
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+.credentials
+.secret
+*.secret
+
+# Personal notes
+NOTES.md
+TODO.md
+*.draft
