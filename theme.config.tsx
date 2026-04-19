@@ -6,17 +6,10 @@ const config: DocsThemeConfig = {
       speckit<span style={{ opacity: 0.6 }}>lab</span>
     </span>
   ),
-  project: {
-    link: 'https://github.com/aissablk1/speckitlab',
-  },
-  docsRepositoryBase: 'https://github.com/aissablk1/speckitlab/tree/main',
   footer: {
     content: (
       <span>
-        MIT {new Date().getFullYear()} ©{' '}
-        <a href="https://github.com/aissablk1" target="_blank" rel="noreferrer">
-          Aïssa Belkoussa
-        </a>
+        MIT {new Date().getFullYear()} © Aïssa Belkoussa
         {'\u00A0\u2014\u00A0'}Built with Spec-Kit.
       </span>
     ),
@@ -44,10 +37,11 @@ const config: DocsThemeConfig = {
   toc: { backToTop: true },
   darkMode: true,
   nextThemes: { defaultTheme: 'system' },
-  editLink: {
-    content: <>Modifier cette page sur GitHub{'\u00A0\u203A'}</>,
-  },
+  editLink: { component: null },
   feedback: { content: null },
+  navbar: {
+    extraContent: null,
+  },
 }
 
 export default config
