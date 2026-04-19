@@ -1,0 +1,97 @@
+---
+title: "Intégration Claude Code"
+description: "Nourrir Claude Code avec des specs efficacement, itérer en boucles courtes, obtenir du code production-ready avec un minimum de retravail."
+---
+
+import { Callout, Steps, Tabs } from 'nextra/components'
+
+# Intégration Claude Code
+
+Là où le Spec-Driven Development devient une superpuissance : quand vous l'associez à un agent qui lit, planifie et exécute à partir de vos specs.
+
+<Callout type="info">
+  Les patterns ci-dessous sont écrits pour [Claude Code](https://claude.com/claude-code) mais se transposent à tout agent CLI ayant accès aux fichiers.
+</Callout>
+
+## La boucle centrale
+
+```
+   ┌───────────────────────────────────────────────────┐
+   │                                                   │
+   ▼                                                   │
+spec.md ──► plan.md ──► tasks.md ──► implémentation ──┘
+                                          │
+                                          ▼
+                                   revue & mise à jour specs
+```
+
+Chaque flèche est un prompt. Chaque étape produit un artefact vérifiable contre le suivant.
+
+## Patterns de prompts
+
+### Pattern 1 — Spec → Plan
+
+> Lis `specs/[feature]/spec.md`. Génère `plan.md` en respectant les conventions de stack dans `CLAUDE.md`. Pour chaque choix non-trivial, liste 2 alternatives et argumente le trade-off en une phrase.
+
+### Pattern 2 — Plan → Tasks
+
+> À partir de `specs/[feature]/plan.md`, génère `tasks.md` en tâches atomiques à cases à cocher. Chaque tâche doit référencer un AC de `spec.md`. Les tâches doivent être réalisables en ≤ 30 minutes.
+
+### Pattern 3 — Exécution de tâche
+
+> Ouvre `specs/[feature]/tasks.md`. Prends la première tâche non cochée. Implémente-la. Avant de marquer `[x]`, vérifie que l'AC référencé passe.
+
+### Pattern 4 — Vérification
+
+> Pour chaque AC de `specs/[feature]/spec.md`, écris la commande de vérification ou le test qui prouve qu'il passe. Attache la sortie à `tasks.md` comme preuve.
+
+## Specs vivantes
+
+Les specs ne sont pas « write-once ». Quand la réalité diverge :
+
+<Steps>
+
+### Signaler la divergence
+
+Les sessions d'agent doivent mettre à jour l'en-tête du `spec.md` : `**Dernière mise à jour** : YYYY-MM-DD` et ajouter une section `## Changelog`.
+
+### Garder la raison
+
+Si un non-objectif devient un objectif, écrivez **pourquoi** (nouvelle contrainte, retour utilisateur, pivot stratégique). Les futurs agents vous remercieront.
+
+### Synchroniser les tâches
+
+Quand le plan change, les tâches ont souvent besoin d'être régénérées. Ne patchez pas `tasks.md` à la main — régénérez-le à partir du `plan.md` mis à jour.
+
+</Steps>
+
+## Anti-patterns
+
+### ❌ Tout dans un seul fichier
+
+Une bouillie spec/plan/tasks de 5 000 mots. Les agents perdent le focus, les humains perdent la patience. Gardez-les séparés.
+
+### ❌ Zapper les critères d'acceptation
+
+Sans ACs, l'agent devine ce que « terminé » signifie. Vous allez rejeter sa sortie et gaspiller des tokens.
+
+### ❌ Granularité floue des tâches
+
+« Implémenter la feature » n'est pas une tâche. « Créer `src/hooks/useTheme.ts` avec lecture + écriture localStorage et couverture AC-2 » en est une.
+
+### ❌ Ne pas relire les specs
+
+Avant chaque grosse session, demandez à l'agent : « Résume `specs/[feature]/spec.md` et liste les tâches ouvertes. » Ça ré-ancre le contexte.
+
+## Checklist avant d'appuyer sur `entrée`
+
+- [ ] La spec est commitée sur la branche courante
+- [ ] `CLAUDE.md` / instructions projet sont à jour
+- [ ] L'agent a accès aux vraies sources de données (pas de mocks)
+- [ ] Vous avez scopé la tâche à ≤ 30 minutes de travail
+- [ ] Vous avez une étape de vérification prête
+
+## Voir aussi
+
+- [Démarrage](/getting-started) — installer les conventions
+- [Votre première spec](/concepts/first-spec) — deep dive rédaction de spec

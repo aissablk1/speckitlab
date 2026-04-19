@@ -1,0 +1,95 @@
+---
+title: "Démarrage"
+description: "Démarrer le Spec-Driven Development sur n'importe quel projet JavaScript en 15 minutes."
+---
+
+import { Callout, Steps, Tabs } from 'nextra/components'
+
+# Démarrage
+
+Ce guide vous emmène de zéro à votre premier trio `spec.md / plan.md / tasks.md` en **moins de 15 minutes**, sur un vrai projet.
+
+## Prérequis
+
+- N'importe quel projet JavaScript/TypeScript (neuf ou existant)
+- Un agent CLI (nous utilisons **Claude Code**, mais les patterns se transposent à d'autres agents)
+- Un minimum d'aisance avec le Markdown
+
+## La convention des 3 fichiers
+
+Chaque feature, même petite, vit dans `specs/[feature-slug]/` avec trois fichiers :
+
+```
+specs/
+└── my-feature/
+    ├── spec.md     # quoi & pourquoi
+    ├── plan.md     # comment
+    └── tasks.md    # étapes atomiques
+```
+
+<Callout type="info">
+  Un dossier par feature. Ils vivent à côté du code, sont commités avec lui, arrivent en PR avec lui.
+</Callout>
+
+## Installer les conventions
+
+<Steps>
+
+### Créer le dossier specs
+
+```bash
+mkdir -p specs
+echo "# Specs\n\nArtefacts de spec-driven development." > specs/README.md
+```
+
+### Récupérer les templates de démarrage
+
+Copiez les trois templates dans votre dossier `specs/` — soit via :
+
+```bash
+curl -sSL https://raw.githubusercontent.com/aissablk1/speckitlab/main/content/templates/spec.md -o specs/TEMPLATE-spec.md
+curl -sSL https://raw.githubusercontent.com/aissablk1/speckitlab/main/content/templates/plan.md -o specs/TEMPLATE-plan.md
+curl -sSL https://raw.githubusercontent.com/aissablk1/speckitlab/main/content/templates/tasks.md -o specs/TEMPLATE-tasks.md
+```
+
+… soit en ouvrant [Spec](/templates/spec), [Plan](/templates/plan), [Tasks](/templates/tasks) et en collant chaque bloc de code.
+
+### Démarrer votre première feature
+
+```bash
+mkdir -p specs/my-first-feature
+cp specs/TEMPLATE-spec.md specs/my-first-feature/spec.md
+```
+
+Ouvrez `spec.md` et remplissez les sections dans l'ordre : problème, audience, user stories, critères d'acceptation.
+
+### Passer le relais à votre agent
+
+Dans votre session Claude Code :
+
+> Lis `specs/my-first-feature/spec.md` et génère un `plan.md` en respectant les conventions de stack dans `CLAUDE.md`.
+
+Puis :
+
+> À partir de `plan.md`, génère `tasks.md` avec des tâches atomiques. Chaque tâche doit référencer un AC.
+
+### Itérer
+
+Relisez, corrigez, commitez. **Les specs deviennent la source de vérité** pour les futures sessions d'agent.
+
+</Steps>
+
+## À quoi ressemble le succès
+
+Après 15 minutes, vous devriez avoir :
+
+- ✅ `specs/my-first-feature/spec.md` avec 5-10 user stories et 5+ ACs
+- ✅ `specs/my-first-feature/plan.md` avec les choix de stack argumentés
+- ✅ `specs/my-first-feature/tasks.md` avec 10-30 tâches atomiques
+
+Ensuite, laissez votre agent dérouler la liste — chaque complétion = un petit commit.
+
+## Suite
+
+- [Votre première spec — en profondeur](/concepts/first-spec)
+- [Patterns d'intégration Claude Code](/concepts/claude-code-integration)

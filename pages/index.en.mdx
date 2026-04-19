@@ -4,15 +4,18 @@ description: "A practical lab for Spec-Driven Development in the JavaScript ecos
 ---
 
 import { Callout, Cards, Steps } from 'nextra/components'
+import { Hero } from '../components/Hero'
 
-# speckitlab
-
-**Spec-Driven Development (SDD) for the JavaScript ecosystem, paired with Claude Code.**
-
-A practical lab with ready-to-use templates, opinionated guides, and real examples — so you can go from blank page to shipped feature without the usual page-blanche paralysis.
+<Hero
+  eyebrow="Spec-Driven Development"
+  title={<>Ship features with <em>intent</em>,<br/>not improvisation.</>}
+  subtitle="Templates, guides, and Claude Code integration patterns for the JavaScript ecosystem — so you go from blank page to shipped feature without the usual page-blanche paralysis."
+  primary={{ label: 'Get started\u00A0\u203A', href: '/getting-started' }}
+  secondary={{ label: 'View on GitHub\u00A0\u203A', href: 'https://github.com/aissablk1/speckitlab' }}
+/>
 
 <Callout type="info">
-  This project is **dogfooded**: everything you see was built using the very specs you can read in [`specs/mvp-launch/`](https://github.com/aissablk1/speckitlab/tree/main/specs/mvp-launch). Start with the [getting started guide](/getting-started) if you prefer the walkthrough.
+  This project is **dogfooded**: everything you see was built using the very specs you can read in [`specs/mvp-launch/`](https://github.com/aissablk1/speckitlab/tree/main/specs/mvp-launch).
 </Callout>
 
 ## Why another SDD resource?

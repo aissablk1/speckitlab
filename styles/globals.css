@@ -1,0 +1,286 @@
+/* speckitlab — global overrides and custom components */
+
+:root {
+  --skl-accent: oklch(72% 0.17 230);
+  --skl-accent-strong: oklch(55% 0.2 230);
+  --skl-surface: oklch(99% 0.002 250);
+  --skl-surface-2: oklch(96% 0.004 250);
+  --skl-ink: oklch(18% 0.01 250);
+  --skl-ink-soft: oklch(45% 0.015 250);
+  --skl-border: oklch(90% 0.005 250);
+  --skl-radius: 14px;
+  --skl-radius-sm: 8px;
+  --skl-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -12px rgb(0 0 0 / 0.08);
+  --skl-font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Inter, Roboto, sans-serif;
+  --skl-font-mono: ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
+}
+
+.dark {
+  --skl-surface: oklch(14% 0.008 250);
+  --skl-surface-2: oklch(20% 0.01 250);
+  --skl-ink: oklch(95% 0.004 250);
+  --skl-ink-soft: oklch(70% 0.012 250);
+  --skl-border: oklch(28% 0.008 250);
+  --skl-shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -8px rgb(0 0 0 / 0.5);
+}
+
+html {
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
+}
+
+body {
+  font-family: var(--skl-font-sans);
+}
+
+/* Tighter typography for landing */
+.nextra-content h1 {
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.nextra-content h2 {
+  letter-spacing: -0.02em;
+  font-weight: 650;
+  margin-top: 3rem;
+}
+
+.nextra-content p {
+  line-height: 1.75;
+}
+
+/* Code block polish */
+.nextra-code {
+  font-feature-settings: 'calt';
+  font-variant-ligatures: contextual;
+}
+
+/* ========================================================================
+   Hero
+   ======================================================================== */
+
+.skl-hero {
+  position: relative;
+  padding: clamp(2rem, 6vw, 4.5rem) 0 clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--skl-border);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 960px) {
+  .skl-hero {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.skl-hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--skl-accent-strong);
+  margin: 0 0 0.9rem 0;
+  grid-column: 1 / -1;
+}
+
+.skl-hero__title {
+  font-size: clamp(2.1rem, 5.2vw, 3.5rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.035em !important;
+  margin: 0 !important;
+  font-weight: 750 !important;
+  color: var(--skl-ink);
+}
+
+.skl-hero__title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--skl-accent) 0%, var(--skl-accent-strong) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.skl-hero__subtitle {
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--skl-ink-soft);
+  margin: 1.1rem 0 0 0;
+  max-width: 44rem;
+}
+
+.skl-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.skl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.2rem;
+  border-radius: var(--skl-radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+.skl-btn:hover {
+  transform: translateY(-1px);
+}
+
+.skl-btn--primary {
+  background: var(--skl-ink);
+  color: var(--skl-surface) !important;
+}
+
+.dark .skl-btn--primary {
+  background: var(--skl-ink);
+  color: var(--skl-surface);
+}
+
+.skl-btn--primary:hover {
+  background: var(--skl-accent-strong);
+}
+
+.skl-btn--ghost {
+  background: transparent;
+  color: var(--skl-ink) !important;
+  border-color: var(--skl-border);
+}
+
+.skl-btn--ghost:hover {
+  border-color: var(--skl-ink-soft);
+  background: var(--skl-surface-2);
+}
+
+/* Mock editor cards */
+.skl-hero__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 960px) {
+  .skl-hero__grid {
+    grid-column: auto;
+    grid-template-rows: repeat(3, minmax(0, auto));
+    transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
+  }
+}
+
+.skl-hero__card {
+  background: var(--skl-surface);
+  border: 1px solid var(--skl-border);
+  border-radius: var(--skl-radius);
+  overflow: hidden;
+  box-shadow: var(--skl-shadow);
+  opacity: 0;
+  animation: skl-hero-enter 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+@keyframes skl-hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skl-hero__card {
+    animation: none;
+    opacity: 1;
+  }
+  .skl-btn {
+    transition: none;
+  }
+  .skl-btn:hover {
+    transform: none;
+  }
+}
+
+.skl-hero__card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.85rem;
+  border-bottom: 1px solid var(--skl-border);
+  background: var(--skl-surface-2);
+}
+
+.skl-hero__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--skl-border);
+}
+
+.skl-hero__dot:first-child {
+  background: #ff5f57;
+}
+
+.skl-hero__dot:nth-child(2) {
+  background: #febc2e;
+}
+
+.skl-hero__dot:nth-child(3) {
+  background: #28c840;
+}
+
+.skl-hero__filename {
+  margin-left: 0.5rem;
+  font-family: var(--skl-font-mono);
+  font-size: 0.78rem;
+  color: var(--skl-ink-soft);
+}
+
+.skl-hero__card-body {
+  padding: 0.85rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: var(--skl-font-mono);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.skl-hero__h {
+  color: var(--skl-accent-strong);
+  font-weight: 600;
+}
+
+.skl-hero__p {
+  color: var(--skl-ink-soft);
+}
+
+/* Better card hover */
+.nextra-cards .nextra-card {
+  transition: transform 0.15s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.nextra-cards .nextra-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--skl-accent) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nextra-cards .nextra-card,
+  .nextra-cards .nextra-card:hover {
+    transition: none !important;
+    transform: none !important;
+  }
+}
