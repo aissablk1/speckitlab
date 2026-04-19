@@ -27,7 +27,7 @@ const config: DocsThemeConfig = {
         content="Spec-Driven Development lab for JavaScript + Claude Code."
       />
       <meta name="theme-color" content="#0a0a0a" />
-      <link rel="canonical" href="https://speckitlab.js.org" />
+      <link rel="canonical" href="https://speckitlab.vercel.app" />
     </>
   ),
   sidebar: {

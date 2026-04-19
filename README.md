@@ -6,7 +6,7 @@
 [![Built with Nextra](https://img.shields.io/badge/Built%20with-Nextra%203-black)](https://nextra.site)
 [![Dogfooded](https://img.shields.io/badge/dogfooded-%E2%9C%93-brightgreen)](./specs/mvp-launch)
 
-**Live:** [speckitlab.js.org](https://speckitlab.js.org) *(pending review)* — mirror at [speckitlab.is-a.dev](https://speckitlab.is-a.dev) *(coming)*
+**Live:** [speckitlab.vercel.app](https://speckitlab.vercel.app)
 
 ---
 
