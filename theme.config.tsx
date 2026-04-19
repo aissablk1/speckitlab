@@ -1,5 +1,6 @@
 import type { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
+import { LocaleSwitcher } from './components/LocaleSwitcher'
 
 const config: DocsThemeConfig = {
   logo: (
@@ -60,6 +61,9 @@ const config: DocsThemeConfig = {
   sidebar: {
     defaultMenuCollapseLevel: 1,
     toggleButton: true,
+  },
+  navbar: {
+    extraContent: <LocaleSwitcher />,
   },
   toc: { backToTop: true },
   darkMode: true,

@@ -811,6 +811,48 @@ body {
 }
 
 /* =========================================================================
+   Locale switcher (navbar)
+   ========================================================================= */
+
+.skl-locale {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--skl-radius-sm);
+  border: 1px solid var(--skl-border);
+  background: var(--skl-surface);
+  font-family: var(--skl-font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.skl-locale__btn {
+  padding: 0.2rem 0.45rem;
+  border-radius: var(--skl-radius-xs);
+  color: var(--skl-ink-soft) !important;
+  text-decoration: none !important;
+  transition: color 0.15s, background 0.15s;
+}
+
+.skl-locale__btn:hover {
+  color: var(--skl-ink) !important;
+  background: var(--skl-surface-2);
+}
+
+.skl-locale__btn--active {
+  color: var(--skl-ink-strong) !important;
+  background: var(--skl-accent-soft);
+}
+
+.skl-locale__sep {
+  color: var(--skl-ink-faint);
+  padding: 0 0.1rem;
+  font-weight: 400;
+}
+
+/* =========================================================================
    Reduced motion
    ========================================================================= */
 
