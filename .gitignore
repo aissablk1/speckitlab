@@ -3,12 +3,10 @@ node_modules/
 .pnpm-store/
 
 # Build outputs
-.next/
-out/
-coverage/
-.turbo/
-tsconfig.tsbuildinfo
-next-env.d.ts
+dist/
+.astro/
+.output/
+.vercel/
 
 # Environment secrets
 .env
@@ -17,9 +15,6 @@ next-env.d.ts
 .env.production.local
 .env.test.local
 .env*.local
-
-# Vercel
-.vercel/
 
 # Logs
 *.log
