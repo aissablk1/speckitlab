@@ -1,10 +1,8 @@
 import { setRequestLocale } from 'next-intl/server'
 import { Hero } from '@/components/home/hero'
-import { Marquee } from '@/components/home/marquee'
-import { LoopFlow } from '@/components/home/loop-flow'
-import { Personas } from '@/components/home/personas'
-import { Stats } from '@/components/home/stats'
-import { BigCTA } from '@/components/home/big-cta'
+import { SpecShowcase } from '@/components/home/spec-showcase'
+import { Flow } from '@/components/home/flow'
+import { Closing } from '@/components/home/closing'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -15,11 +13,9 @@ export default async function Home({ params }: Props) {
   return (
     <>
       <Hero />
-      <Marquee />
-      <LoopFlow />
-      <Personas />
-      <Stats />
-      <BigCTA />
+      <SpecShowcase />
+      <Flow />
+      <Closing />
     </>
   )
 }

@@ -16,81 +16,35 @@
     "titleEnd": ",\npas à l'improvisation.",
     "subtitle": "Templates, guides et patterns d'intégration Claude Code pour l'écosystème JavaScript — pour passer de la page blanche à la feature livrée sans la paralysie habituelle.",
     "primary": "Écrire votre première spec",
-    "secondary": "Voir sur GitHub",
-    "beforeLabel": "// sans specs",
-    "afterLabel": "// spec.md"
+    "secondary": "Voir un exemple"
   },
-  "marquee": {
-    "items": ["Spec-Driven Development", "Claude Code", "JavaScript", "TypeScript", "Next.js", "Remix", "Astro", "Bun", "Deno", "MDX", "spec.md → plan.md → tasks.md"]
+  "showcase": {
+    "kicker": "La spec",
+    "heading": "Un fichier. Toutes les hypothèses sur la table.",
+    "para1": "Une spec n'est pas de la documentation a posteriori. C'est le contrat que vous passez à Claude Code avant qu'une ligne soit écrite — le problème, les critères d'acceptation, ce qui est explicitement hors scope.",
+    "para2": "Elle survit au refactor. Elle argumente les trade-offs. Elle garde l'agent honnête entre les sessions.",
+    "metric1Label": "Sections",
+    "metric1Value": "8 canoniques",
+    "metric2Label": "Review",
+    "metric2Value": "Moins de 20 minutes",
+    "metric3Label": "Sortie",
+    "metric3Value": "Passée telle quelle à Claude Code"
   },
-  "loop": {
-    "kicker": "La boucle des 3 artefacts",
-    "heading": "Trois fichiers. Une seule source de vérité.",
-    "spec": {
-      "title": "Quoi construire",
-      "tagline": "Problème, audience, critères d'acceptation, non-objectifs.",
-      "b1": "Survit aux refactors et aux pivots de stack",
-      "b2": "8 sections canoniques dans un ordre fixe",
-      "b3": "Chaque AC est testable par quelque chose de concret"
-    },
-    "plan": {
-      "title": "Comment le construire",
-      "tagline": "Choix de stack, architecture, contrats de données, sécurité.",
-      "b1": "Argumente chaque décision non-triviale en une phrase",
-      "b2": "Rend les trade-offs explicites — aucune supposition cachée",
-      "b3": "Évolue avec le projet (contrairement à la spec)"
-    },
-    "tasks": {
-      "title": "Quoi faire ensuite",
-      "tagline": "Atomiques, vérifiables, traçables vers un AC.",
-      "b1": "Chaque tâche est réalisable en ≤ 30 minutes",
-      "b2": "Référence l'AC qu'elle satisfait",
-      "b3": "C'est ce que vous passez à Claude Code"
-    }
+  "flow": {
+    "kicker": "Le flux",
+    "heading": "De l'intention à la livraison — trois fichiers.",
+    "intro": "La spec dit le quoi et le pourquoi. Le plan argumente le comment. Les tasks listent les étapes atomiques, chacune traçable à un critère d'acceptation. Aucun autre artefact. Aucun angle mort. Claude Code lit les trois et exécute.",
+    "specSub": "Problème, audience, critères d'acceptation, non-objectifs — écrits en premier, jamais sautés.",
+    "planSub": "Choix de stack, contrats de données, sécurité. Chaque décision non-triviale justifiée en une phrase.",
+    "tasksSub": "Atomiques, vérifiables, chacune mappée à un AC. Réalisables en ≤ 30 minutes ou découpées."
   },
-  "personas": {
-    "kicker": "Pensé pour",
-    "heading": "Pensé pour les devs qui livrent.",
-    "solo": {
-      "title": "Devs solo",
-      "lead": "Tuez la paralysie de la page blanche sur chaque nouveau projet.",
-      "p1": "Templates copiables-collables en 60 secondes",
-      "p2": "Structure éprouvée, zéro cérémonial",
-      "p3": "Passage instantané à Claude Code"
-    },
-    "team": {
-      "title": "Tech leads",
-      "lead": "Donnez à votre équipe un langage commun pour le travail avec IA.",
-      "p1": "Specs cohérentes entre features",
-      "p2": "Artefacts revuables à chaque PR",
-      "p3": "Onboarding divisé par deux"
-    },
-    "trainer": {
-      "title": "Formateurs & consultants",
-      "lead": "Matériel réutilisable pour ateliers et missions clients.",
-      "p1": "Exemples réels, pas de toy projects",
-      "p2": "Contenu bilingue FR/EN",
-      "p3": "MIT — emportez-le partout"
-    }
-  },
-  "stats": {
-    "kicker": "Métriques qui comptent",
-    "heading": "Pourquoi les équipes restent sur le SDD.",
-    "s1Label": "Artefacts par feature",
-    "s1Hint": "spec, plan, tasks — pas plus, pas moins.",
-    "s2Label": "Sections canoniques",
-    "s2Hint": "Chacune documente une décision qui mérite d'être écrite.",
-    "s3Label": "Durée max d'une tâche",
-    "s3Hint": "Plus grand, ça se découpe. Sans exception.",
-    "s4Label": "Dogfoodé",
-    "s4Hint": "Ce site a été construit à partir de ses propres specs."
-  },
-  "bigcta": {
+  "closing": {
     "kicker": "Prêt quand vous l'êtes",
     "heading": "Arrêtez de vous disputer avec la page blanche.",
-    "subtitle": "Copiez les templates, écrivez votre première spec en 20 minutes, passez-la à Claude Code, livrez.",
+    "body": "Copiez les templates, écrivez votre première spec en vingt minutes, passez-la à Claude Code. Le site que vous lisez a été construit de la même manière — ses specs vivent dans /specs/mvp-launch/.",
     "primary": "Écrire votre première spec",
-    "secondary": "Voir un vrai exemple"
+    "secondary": "Voir les templates",
+    "github": "Voir sur GitHub"
   },
   "footer": {
     "built": "Construit avec Spec-Kit.",

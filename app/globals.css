@@ -143,6 +143,153 @@
 }
 
 /* =========================================================================
+   Editorial landing (Linear/Resend/Stripe-grade)
+   ========================================================================= */
+
+.skl-hero-ed {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid var(--border);
+}
+
+.skl-hero-ed__grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, black 40%, transparent 80%);
+  opacity: 0.6;
+}
+
+.skl-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: oklch(52% 0.2 240);
+  box-shadow: 0 0 0 3px oklch(52% 0.2 240 / 0.15);
+}
+
+.dark .skl-dot {
+  background: oklch(72% 0.16 230);
+  box-shadow: 0 0 0 3px oklch(72% 0.16 230 / 0.2);
+}
+
+.skl-ed-h1 {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  font-weight: 520;
+  color: var(--foreground);
+  max-width: 20ch;
+  white-space: pre-line;
+}
+
+.skl-ed-h1__em {
+  font-style: normal;
+  font-weight: 520;
+  color: oklch(48% 0.2 240);
+  position: relative;
+}
+
+.dark .skl-ed-h1__em {
+  color: oklch(78% 0.16 230);
+}
+
+.skl-ed-h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  font-weight: 540;
+  color: var(--foreground);
+  max-width: 18ch;
+}
+
+/* =========================================================================
+   Code block premium (spec.md showcase)
+   ========================================================================= */
+
+.skl-code {
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  overflow: hidden;
+  box-shadow: 0 1px 2px oklch(0% 0 0 / 0.03), 0 20px 50px -20px oklch(0% 0 0 / 0.12);
+}
+
+.dark .skl-code {
+  box-shadow: 0 1px 2px oklch(0% 0 0 / 0.4), 0 24px 56px -16px oklch(0% 0 0 / 0.6);
+}
+
+.skl-code__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.skl-code__dots {
+  display: inline-flex;
+  gap: 6px;
+}
+.skl-code__dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.skl-code__file {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--muted-foreground);
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.skl-code__lang {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-foreground);
+  opacity: 0.6;
+}
+
+.skl-code__body {
+  margin: 0;
+  padding: 22px 24px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--foreground);
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+.skl-code__body code { font-family: inherit; }
+
+/* Token colors — sober, 3 hues max */
+.skl-code__body .l { color: var(--foreground); font-weight: 560; }
+.skl-code__body .h { color: oklch(48% 0.2 240); font-weight: 560; }
+.dark .skl-code__body .h { color: oklch(78% 0.16 230); }
+.skl-code__body .k { color: oklch(48% 0.14 295); font-weight: 560; }
+.dark .skl-code__body .k { color: oklch(78% 0.12 295); }
+.skl-code__body .meta { color: var(--muted-foreground); }
+.skl-code__body .hr { color: var(--border); }
+.skl-code__body .p { color: var(--foreground); opacity: 0.78; }
+
+/* =========================================================================
    Typography scale (fixe, anti-AI-slop)
    ========================================================================= */
 

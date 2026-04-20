@@ -16,81 +16,35 @@
     "titleEnd": ",\nnot improvisation.",
     "subtitle": "Templates, guides, and Claude Code integration patterns for the JavaScript ecosystem — so you go from blank page to shipped feature without the usual blank-page paralysis.",
     "primary": "Write your first spec",
-    "secondary": "View on GitHub",
-    "beforeLabel": "// without specs",
-    "afterLabel": "// spec.md"
+    "secondary": "See an example"
   },
-  "marquee": {
-    "items": ["Spec-Driven Development", "Claude Code", "JavaScript", "TypeScript", "Next.js", "Remix", "Astro", "Bun", "Deno", "MDX", "spec.md → plan.md → tasks.md"]
+  "showcase": {
+    "kicker": "The spec",
+    "heading": "One file. Every assumption on the table.",
+    "para1": "A spec isn't documentation after the fact. It's the contract you hand to Claude Code before any line gets written — the problem, the acceptance criteria, what's explicitly out of scope.",
+    "para2": "It survives the refactor. It argues the trade-offs. It keeps the agent honest across sessions.",
+    "metric1Label": "Sections",
+    "metric1Value": "8 canonical",
+    "metric2Label": "Review",
+    "metric2Value": "Under 20 minutes",
+    "metric3Label": "Output",
+    "metric3Value": "Handed as-is to Claude Code"
   },
-  "loop": {
-    "kicker": "The 3-artefact loop",
-    "heading": "Three files. One source of truth.",
-    "spec": {
-      "title": "What to build",
-      "tagline": "Problem, audience, acceptance criteria, non-goals.",
-      "b1": "Survives refactors and stack pivots",
-      "b2": "8 canonical sections in a fixed order",
-      "b3": "Every AC is testable by something concrete"
-    },
-    "plan": {
-      "title": "How to build it",
-      "tagline": "Stack choices, architecture, data contracts, security.",
-      "b1": "Argues every non-trivial decision in one sentence",
-      "b2": "Makes trade-offs explicit — no hidden assumptions",
-      "b3": "Evolves with the project (unlike the spec)"
-    },
-    "tasks": {
-      "title": "What to do next",
-      "tagline": "Atomic, verifiable, traceable back to an AC.",
-      "b1": "Each task is completable in ≤ 30 minutes",
-      "b2": "References the AC it satisfies",
-      "b3": "This is what you hand to Claude Code"
-    }
+  "flow": {
+    "kicker": "The flow",
+    "heading": "From intent to shipped — three files.",
+    "intro": "The spec states what and why. The plan argues how. The tasks list atomic steps each traceable to an acceptance criterion. No other artefact. No hidden slack. Claude Code reads the three and executes.",
+    "specSub": "Problem, audience, acceptance criteria, non-goals — written first, never skipped.",
+    "planSub": "Stack choices, data contracts, security posture. Every non-trivial decision justified in one sentence.",
+    "tasksSub": "Atomic, verifiable, each mapped to an AC. Completable in ≤ 30 minutes or split."
   },
-  "personas": {
-    "kicker": "Built for",
-    "heading": "Built for devs who ship.",
-    "solo": {
-      "title": "Solo devs",
-      "lead": "Kill the page-blanche paralysis on every new project.",
-      "p1": "Templates copy-paste in 60 seconds",
-      "p2": "Proven structure, zero ceremony",
-      "p3": "Instant handoff to Claude Code"
-    },
-    "team": {
-      "title": "Tech leads",
-      "lead": "Give your team a shared language for AI-paired work.",
-      "p1": "Consistent specs across features",
-      "p2": "Reviewable artefacts in every PR",
-      "p3": "Onboarding halved"
-    },
-    "trainer": {
-      "title": "Trainers & consultants",
-      "lead": "Reusable material for workshops and client engagements.",
-      "p1": "Real examples, not toy projects",
-      "p2": "Bilingual EN/FR content",
-      "p3": "MIT — bring it anywhere"
-    }
-  },
-  "stats": {
-    "kicker": "Metrics that matter",
-    "heading": "Why teams stick with SDD.",
-    "s1Label": "Artefacts per feature",
-    "s1Hint": "spec, plan, tasks — no more, no less.",
-    "s2Label": "Canonical spec sections",
-    "s2Hint": "Each one documents a decision worth writing down.",
-    "s3Label": "Max task duration",
-    "s3Hint": "Anything bigger gets split. No exceptions.",
-    "s4Label": "Dogfooded",
-    "s4Hint": "This site was built from its own specs."
-  },
-  "bigcta": {
+  "closing": {
     "kicker": "Ready when you are",
     "heading": "Stop arguing with a blank page.",
-    "subtitle": "Copy the templates, write your first spec in 20 minutes, hand it to Claude Code, ship.",
+    "body": "Copy the templates, write your first spec in twenty minutes, hand it to Claude Code. The site you're reading was built the same way — its specs live in /specs/mvp-launch/.",
     "primary": "Write your first spec",
-    "secondary": "See a real example"
+    "secondary": "Browse templates",
+    "github": "View on GitHub"
   },
   "footer": {
     "built": "Built with Spec-Kit.",
