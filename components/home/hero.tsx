@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section className="skl-hero-ed">
       <div className="skl-hero-ed__grid" aria-hidden />
-      <div className="mx-auto max-w-6xl px-6 lg:px-8 pt-32 pb-20 sm:pt-40 sm:pb-24">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8 pt-36 pb-20 sm:pt-44 sm:pb-24">
         <div className="flex items-center gap-3 mb-10">
           <span className="skl-dot" aria-hidden />
           <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">

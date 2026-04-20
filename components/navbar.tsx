@@ -9,7 +9,7 @@ export function Navbar() {
   const t = useTranslations('nav')
 
   return (
-    <div className="sticky top-3 z-40 w-full px-3 sm:px-4 pointer-events-none">
+    <div className="sticky top-4 z-40 w-full px-3 sm:px-4 pt-1 pointer-events-none">
       <header className="skl-navbar pointer-events-auto mx-auto flex h-12 max-w-5xl items-center justify-between gap-3 rounded-full border border-border/70 bg-background/70 px-2.5 backdrop-blur-xl supports-[backdrop-filter]:bg-background/50 shadow-[0_1px_2px_oklch(0%_0_0/0.04),0_8px_24px_-12px_oklch(0%_0_0/0.12)] dark:shadow-[0_1px_2px_oklch(0%_0_0/0.4),0_12px_32px_-8px_oklch(0%_0_0/0.5)]">
         <div className="flex items-center gap-5 pl-1.5">
           <Link href="/" className="skl-logo flex items-center gap-2 tracking-tight" aria-label="speckitlab">

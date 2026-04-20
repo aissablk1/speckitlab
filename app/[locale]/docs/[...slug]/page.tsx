@@ -36,18 +36,18 @@ export default async function DocPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="flex gap-8 py-8">
+      <div className="flex gap-12 pt-20 pb-16 sm:pt-24">
         <aside className="hidden lg:block w-64 shrink-0">
-          <div className="sticky top-20">
+          <div className="sticky top-28">
             <DocsSidebar groups={groups} />
           </div>
         </aside>
 
         <article className="min-w-0 flex-1 max-w-3xl">
-          <header className="mb-8 border-b border-border/60 pb-6">
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight">{doc.title}</h1>
+          <header className="mb-10 border-b border-border/60 pb-8">
+            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">{doc.title}</h1>
             {doc.description && (
-              <p className="mt-3 text-muted-foreground">{doc.description}</p>
+              <p className="mt-3 text-[17px] leading-relaxed text-muted-foreground">{doc.description}</p>
             )}
           </header>
           <MDX source={doc.body} />
