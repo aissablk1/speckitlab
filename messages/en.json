@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "gettingStarted": "Getting started",
+    "concepts": "Concepts",
+    "templates": "Templates",
+    "github": "GitHub",
+    "search": "Search documentation…",
+    "toggleTheme": "Toggle theme",
+    "onThisPage": "On this page",
+    "editOnGitHub": "Edit this page on GitHub"
+  },
+  "hero": {
+    "eyebrow": "LIVE · SPEC-DRIVEN DEVELOPMENT",
+    "titleStart": "Ship features with ",
+    "titleEm": "intent",
+    "titleEnd": ",\nnot improvisation.",
+    "subtitle": "Templates, guides, and Claude Code integration patterns for the JavaScript ecosystem — so you go from blank page to shipped feature without the usual page-blanche paralysis.",
+    "primary": "Get started",
+    "secondary": "View on GitHub",
+    "beforeLabel": "// without specs",
+    "afterLabel": "// spec.md"
+  },
+  "marquee": {
+    "items": ["Spec-Driven Development", "Claude Code", "JavaScript", "TypeScript", "Next.js", "Remix", "Astro", "Bun", "Deno", "MDX", "spec.md → plan.md → tasks.md"]
+  },
+  "loop": {
+    "kicker": "The 3-artefact loop",
+    "heading": "Three files. One source of truth.",
+    "spec": {
+      "title": "The what",
+      "tagline": "Problem, audience, acceptance criteria, non-goals.",
+      "b1": "Survives refactors and stack pivots",
+      "b2": "8 canonical sections in a fixed order",
+      "b3": "Every AC is testable by something concrete"
+    },
+    "plan": {
+      "title": "The how",
+      "tagline": "Stack choices, architecture, data contracts, security.",
+      "b1": "Argues every non-trivial decision in one sentence",
+      "b2": "Makes trade-offs explicit — no hidden assumptions",
+      "b3": "Evolves with the project (unlike the spec)"
+    },
+    "tasks": {
+      "title": "The steps",
+      "tagline": "Atomic, verifiable, traceable back to an AC.",
+      "b1": "Each task is completable in ≤ 30 minutes",
+      "b2": "References the AC it satisfies",
+      "b3": "This is what you hand to Claude Code"
+    }
+  },
+  "personas": {
+    "kicker": "Built for",
+    "heading": "Three kinds of people ship faster with this.",
+    "solo": {
+      "title": "Solo devs",
+      "lead": "Kill the page-blanche paralysis on every new project.",
+      "p1": "Templates copy-paste in 60 seconds",
+      "p2": "Proven structure, zero ceremony",
+      "p3": "Instant handoff to Claude Code"
+    },
+    "team": {
+      "title": "Tech leads",
+      "lead": "Give your team a shared language for AI-paired work.",
+      "p1": "Consistent specs across features",
+      "p2": "Reviewable artefacts in every PR",
+      "p3": "Onboarding halved"
+    },
+    "trainer": {
+      "title": "Trainers & consultants",
+      "lead": "Reusable material for workshops and client engagements.",
+      "p1": "Real examples, not toy projects",
+      "p2": "Bilingual EN/FR content",
+      "p3": "MIT — bring it anywhere"
+    }
+  },
+  "stats": {
+    "kicker": "Metrics that matter",
+    "heading": "Why teams stick with SDD.",
+    "s1Label": "Artefacts per feature",
+    "s1Hint": "spec, plan, tasks — no more, no less.",
+    "s2Label": "Canonical spec sections",
+    "s2Hint": "Skip any and you've skipped the thinking.",
+    "s3Label": "Max task duration",
+    "s3Hint": "Anything bigger gets split. No exceptions.",
+    "s4Label": "Dogfooded",
+    "s4Hint": "This site was built from its own specs."
+  },
+  "bigcta": {
+    "kicker": "Ready when you are",
+    "heading": "Stop arguing with a blank page.",
+    "subtitle": "Copy the templates, write your first spec in 20 minutes, hand it to Claude Code, ship.",
+    "primary": "Start your first spec",
+    "secondary": "See a real example"
+  },
+  "footer": {
+    "built": "Built with Spec-Kit.",
+    "rights": "© 2026 Aïssa Belkoussa — MIT."
+  }
+}
