@@ -3,8 +3,6 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { Logo } from '@/components/logo'
-import { LocaleSwitcher } from '@/components/locale-switcher'
-import { ThemeToggle } from '@/components/theme-toggle'
 import { useT } from '@/lib/i18n/client'
 
 export function Footer() {
@@ -73,12 +71,7 @@ export function Footer() {
             <span className="text-border" aria-hidden>·</span>
             <span>MIT</span>
           </div>
-          <div className="flex items-center gap-3">
-            <LocaleSwitcher />
-            <ThemeToggle />
-            <span className="text-border" aria-hidden>·</span>
-            <span className="opacity-70">{f.signature}</span>
-          </div>
+          <span className="opacity-70">{f.signature}</span>
         </div>
       </div>
     </footer>

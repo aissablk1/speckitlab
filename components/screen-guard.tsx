@@ -3,6 +3,8 @@
 import * as React from 'react'
 import { Monitor, RotateCw, Maximize2 } from 'lucide-react'
 import { useT } from '@/lib/i18n/client'
+import { LocaleSwitcher } from '@/components/locale-switcher'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 const MIN_WIDTH = 640
 const MIN_HEIGHT = 560
@@ -43,7 +45,7 @@ export function ScreenGuard() {
       role="dialog"
       aria-modal="true"
       aria-labelledby="screen-guard-title"
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-xl p-6"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background/95 backdrop-blur-xl p-6"
     >
       <div className="max-w-sm text-center">
         <div className="mx-auto mb-6 flex size-14 items-center justify-center rounded-full border border-border bg-card">
@@ -59,6 +61,11 @@ export function ScreenGuard() {
         <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground/70">
           {g.hint}
         </p>
+      </div>
+
+      <div className="mt-10 flex items-center gap-3">
+        <LocaleSwitcher />
+        <ThemeToggle />
       </div>
     </div>
   )
