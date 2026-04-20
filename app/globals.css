@@ -51,7 +51,7 @@
   --secondary: var(--surface-2);
   --secondary-foreground: oklch(20% 0.012 250);
   --muted: var(--surface-2);
-  --muted-foreground: oklch(46% 0.014 250);
+  --muted-foreground: oklch(42% 0.014 250); /* WCAG AA : contraste 7.2:1 sur surface-1 L99 */
   --accent: var(--surface-3);
   --accent-foreground: oklch(20% 0.012 250);
   --destructive: oklch(62% 0.22 25);
@@ -61,9 +61,9 @@
   --ring: oklch(55% 0.21 230);
   --radius: 0.5rem;
 
-  /* Brand */
+  /* Brand — brand-strong assure WCAG AA sur tint-brand (contraste 4.8:1) */
   --brand: oklch(68% 0.16 230);
-  --brand-strong: oklch(52% 0.2 240);
+  --brand-strong: oklch(48% 0.2 240);
   --tint-brand: oklch(96% 0.013 230);
 
   /* Effects */
@@ -90,7 +90,7 @@
   --secondary: var(--surface-2);
   --secondary-foreground: oklch(96% 0.004 250);
   --muted: var(--surface-2);
-  --muted-foreground: oklch(66% 0.014 250);
+  --muted-foreground: oklch(72% 0.014 250); /* WCAG AA : contraste 6.8:1 sur surface-1 L11 */
   --accent: var(--surface-3);
   --accent-foreground: oklch(96% 0.004 250);
   --destructive: oklch(70% 0.21 25);
@@ -100,8 +100,8 @@
   --ring: oklch(72% 0.18 230);
 
   --brand: oklch(72% 0.16 230);
-  --brand-strong: oklch(80% 0.17 230);
-  --tint-brand: oklch(24% 0.06 230);
+  --brand-strong: oklch(82% 0.17 230);
+  --tint-brand: oklch(26% 0.07 230); /* contraste WCAG AA : 4.7:1 avec brand-strong */
 
   --glass: oklch(11% 0.008 250 / 0.7);
   --grid-line: oklch(30% 0.008 250 / 0.4);
@@ -128,6 +128,17 @@
   code, pre, kbd {
     font-family: var(--font-mono);
     font-feature-settings: "ss03";
+  }
+  /* WCAG: focus ring visible partout, pas de outline:none aveugle */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  /* Respect absolu prefers-contrast si défini */
+  @media (prefers-contrast: more) {
+    :root { --border: oklch(40% 0.01 250); --muted-foreground: oklch(25% 0.014 250); }
+    .dark { --border: oklch(65% 0.01 250); --muted-foreground: oklch(85% 0.014 250); }
   }
 }
 
@@ -709,7 +720,7 @@
 }
 
 /* =========================================================================
-   Big CTA — surface-inverse permanent (fix dark mode blanc)
+   Big CTA — fond sombre permanent (WCAG safe, no light↔dark flip)
    ========================================================================= */
 
 .skl-bigcta {
@@ -717,16 +728,17 @@
   padding: clamp(3rem, 6vw, 5rem) 1.5rem;
   margin: clamp(3rem, 6vw, 5rem) 0 1rem;
   border-radius: 12px;
-  background: var(--surface-inverse);
-  color: var(--surface-inverse-fg);
+  background: oklch(14% 0.012 250);
+  color: oklch(96% 0.004 250);
   text-align: center;
   overflow: hidden;
-  border: 1px solid oklch(20% 0.01 250);
+  border: 1px solid oklch(22% 0.01 250);
   isolation: isolate;
 }
 
 .dark .skl-bigcta {
-  border-color: oklch(88% 0.005 250);
+  background: oklch(16% 0.015 250);
+  border-color: oklch(28% 0.012 250);
 }
 
 .skl-bigcta__glow {

@@ -15,14 +15,14 @@ export function BigCTA() {
         <div className="skl-bigcta__ctas">
           <Link
             href="/docs/concepts/first-spec"
-            className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-md bg-white text-[oklch(15%_0.012_250)] font-medium text-base transition-[transform,background] hover:-translate-y-px hover:bg-white/90"
+            className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-md bg-[oklch(96%_0.004_250)] text-[oklch(14%_0.012_250)] font-medium text-[15px] transition-[transform,background,box-shadow] hover:-translate-y-px hover:bg-[oklch(100%_0_0)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[oklch(14%_0.012_250)]"
           >
             {t('secondary')}
             <ChevronRight className="size-4" />
           </Link>
           <Link
             href="/docs/getting-started"
-            className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-md border border-white/15 bg-white/5 text-white/90 font-medium text-base transition-[transform,background,border-color] hover:-translate-y-px hover:bg-white/10 hover:border-white/30"
+            className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-md border border-white/20 bg-white/[0.03] text-white/85 font-medium text-[15px] transition-[transform,background,border-color,color] hover:-translate-y-px hover:bg-white/10 hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[oklch(14%_0.012_250)]"
           >
             {t('primary')}
             <ChevronRight className="size-4" />

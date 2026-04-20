@@ -9,41 +9,42 @@ export function Navbar() {
   const t = useTranslations('nav')
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/70 backdrop-blur-xl supports-[backdrop-filter]:bg-background/55">
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-7">
+    <div className="sticky top-3 z-40 w-full px-3 sm:px-4 pointer-events-none">
+      <header className="skl-navbar pointer-events-auto mx-auto flex h-12 max-w-5xl items-center justify-between gap-3 rounded-full border border-border/70 bg-background/70 px-2.5 backdrop-blur-xl supports-[backdrop-filter]:bg-background/50 shadow-[0_1px_2px_oklch(0%_0_0/0.04),0_8px_24px_-12px_oklch(0%_0_0/0.12)] dark:shadow-[0_1px_2px_oklch(0%_0_0/0.4),0_12px_32px_-8px_oklch(0%_0_0/0.5)]">
+        <div className="flex items-center gap-5 pl-1.5">
           <Link href="/" className="flex items-center gap-2 font-medium tracking-tight">
-            <span className="relative inline-block size-6 rounded-[6px] bg-foreground/95 overflow-hidden">
-              <span className="absolute inset-x-[5px] top-[5px] h-[3px] rounded-sm" style={{ background: 'oklch(72% 0.16 230)' }} />
-              <span className="absolute inset-x-[5px] top-[11px] h-[3px] rounded-sm" style={{ background: 'oklch(72% 0.16 230 / 0.72)' }} />
-              <span className="absolute inset-x-[5px] top-[17px] h-[3px] rounded-sm" style={{ background: 'oklch(72% 0.16 230 / 0.45)' }} />
+            <span className="relative inline-block size-[22px] rounded-[5px] bg-foreground/95 overflow-hidden">
+              <span className="absolute inset-x-[4px] top-[4px] h-[2.5px] rounded-[1px]" style={{ background: 'oklch(72% 0.16 230)' }} />
+              <span className="absolute inset-x-[4px] top-[9.5px] h-[2.5px] rounded-[1px]" style={{ background: 'oklch(72% 0.16 230 / 0.72)' }} />
+              <span className="absolute inset-x-[4px] top-[15px] h-[2.5px] rounded-[1px]" style={{ background: 'oklch(72% 0.16 230 / 0.45)' }} />
             </span>
-            <span className="text-[15px] font-semibold">speckit<span className="opacity-55">lab</span></span>
+            <span className="text-[14px] font-semibold leading-none">speckit<span className="opacity-55">lab</span></span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-0.5 text-[13.5px] text-muted-foreground">
-            <Link href="/docs/getting-started" className="px-2.5 py-1.5 rounded-md hover:text-foreground hover:bg-accent/60 transition-colors">
+          <nav className="hidden md:flex items-center gap-0.5 text-[13px] text-muted-foreground">
+            <Link href="/docs/getting-started" className="px-2.5 py-1 rounded-full hover:text-foreground hover:bg-accent/60 transition-colors">
               {t('gettingStarted')}
             </Link>
-            <Link href="/docs/concepts/first-spec" className="px-2.5 py-1.5 rounded-md hover:text-foreground hover:bg-accent/60 transition-colors">
+            <Link href="/docs/concepts/first-spec" className="px-2.5 py-1 rounded-full hover:text-foreground hover:bg-accent/60 transition-colors">
               {t('concepts')}
             </Link>
-            <Link href="/docs/templates/spec" className="px-2.5 py-1.5 rounded-md hover:text-foreground hover:bg-accent/60 transition-colors">
+            <Link href="/docs/templates/spec" className="px-2.5 py-1 rounded-full hover:text-foreground hover:bg-accent/60 transition-colors">
               {t('templates')}
             </Link>
           </nav>
         </div>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1">
           <LocaleSwitcher />
+          <div className="h-5 w-px bg-border/60" aria-hidden />
           <ThemeToggle />
-          <Button variant="ghost" size="icon" asChild aria-label="GitHub">
+          <Button variant="ghost" size="icon" asChild aria-label="GitHub" className="size-8 rounded-full">
             <a href="https://github.com/aissablk1/speckitlab" target="_blank" rel="noreferrer">
-              <Github />
+              <Github className="size-4" />
             </a>
           </Button>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   )
 }
