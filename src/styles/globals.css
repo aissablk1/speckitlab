@@ -853,6 +853,24 @@ body {
 }
 
 /* =========================================================================
+   Hide Starlight's default page title on splash pages that embed our HeroV2
+   ========================================================================= */
+
+main:has(.skl-hero2) > .content-panel:first-child {
+  display: none;
+}
+
+/* Splash template container: let our custom components breathe */
+main:has(.skl-hero2) .sl-markdown-content {
+  max-width: none;
+}
+
+main:has(.skl-hero2) .content-panel {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* =========================================================================
    Reduced motion
    ========================================================================= */
 
