@@ -35,63 +35,65 @@ export function Hero() {
 
   return (
     <section className="skl-hero" aria-label={t('eyebrow')}>
-      <div className="skl-hero__mesh" aria-hidden />
-      <div className="skl-hero__grain" aria-hidden />
+      <div className="skl-hero__grid" aria-hidden />
+      <div className="skl-hero__spot" aria-hidden />
 
-      <div className="skl-hero__intro">
-        <p className="skl-eyebrow">
-          <span className="skl-pulse" aria-hidden />
-          {t('eyebrow')}
-        </p>
-        <h1 className="skl-hero__title">{title}</h1>
-        <p className="skl-hero__subtitle">{t('subtitle')}</p>
-        <div className="skl-hero__ctas">
-          <Button asChild size="lg">
-            <Link href="/docs/getting-started">
-              {t('primary')}
-              <ChevronRight />
-            </Link>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <a href="https://github.com/aissablk1/speckitlab" target="_blank" rel="noreferrer">
-              <Github />
-              {t('secondary')}
-            </a>
-          </Button>
-        </div>
-      </div>
-
-      <div className="skl-hero__split" aria-hidden>
-        <div className="skl-editor">
-          <span className="skl-editor__label">{t('beforeLabel')}</span>
-          <div className="skl-editor__body">
-            {chaosLines.map((line, i) => (
-              <p
-                key={i}
-                className={`skl-editor__line${line.strike ? ' skl-editor__line--strike' : ''}`}
-                style={{ animationDelay: `${line.delay}ms` }}
-              >
-                {line.text}
-              </p>
-            ))}
+      <div className="skl-hero__inner mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="skl-hero__intro">
+          <p className="skl-eyebrow">
+            <span className="skl-pulse" aria-hidden />
+            {t('eyebrow')}
+          </p>
+          <h1 className="skl-hero__title">{title}</h1>
+          <p className="skl-hero__subtitle">{t('subtitle')}</p>
+          <div className="skl-hero__ctas">
+            <Button asChild size="lg">
+              <Link href="/docs/getting-started">
+                {t('primary')}
+                <ChevronRight />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <a href="https://github.com/aissablk1/speckitlab" target="_blank" rel="noreferrer">
+                <Github />
+                {t('secondary')}
+              </a>
+            </Button>
           </div>
         </div>
 
-        <div className="skl-hero__arrow" aria-hidden>›</div>
+        <div className="skl-hero__split" aria-hidden>
+          <div className="skl-editor">
+            <span className="skl-editor__label">{t('beforeLabel')}</span>
+            <div className="skl-editor__body">
+              {chaosLines.map((line, i) => (
+                <p
+                  key={i}
+                  className={`skl-editor__line${line.strike ? ' skl-editor__line--strike' : ''}`}
+                  style={{ animationDelay: `${line.delay}ms` }}
+                >
+                  {line.text}
+                </p>
+              ))}
+            </div>
+          </div>
 
-        <div className="skl-editor">
-          <span className="skl-editor__label">{t('afterLabel')}</span>
-          <div className="skl-editor__body skl-spec">
-            {specLines.map((line, i) => (
-              <div
-                key={i}
-                className="skl-editor__spec-line"
-                style={{ animationDelay: `${line.delay}ms` }}
-              >
-                <span className="skl-editor__spec-k">{line.k}</span>
-                <span className="skl-editor__spec-v">{line.v}</span>
-              </div>
-            ))}
+          <div className="skl-hero__arrow" aria-hidden>›</div>
+
+          <div className="skl-editor">
+            <span className="skl-editor__label">{t('afterLabel')}</span>
+            <div className="skl-editor__body skl-spec">
+              {specLines.map((line, i) => (
+                <div
+                  key={i}
+                  className="skl-editor__spec-line"
+                  style={{ animationDelay: `${line.delay}ms` }}
+                >
+                  <span className="skl-editor__spec-k">{line.k}</span>
+                  <span className="skl-editor__spec-v">{line.v}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

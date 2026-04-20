@@ -10,12 +10,12 @@
     "editOnGitHub": "Modifier cette page sur GitHub"
   },
   "hero": {
-    "eyebrow": "EN DIRECT · SPEC-DRIVEN DEVELOPMENT",
+    "eyebrow": "UN COMPAGNON JS OPINIONATED DE SPEC-KIT",
     "titleStart": "Livrer des features avec ",
     "titleEm": "intention",
     "titleEnd": ",\npas à l'improvisation.",
     "subtitle": "Templates, guides et patterns d'intégration Claude Code pour l'écosystème JavaScript — pour passer de la page blanche à la feature livrée sans la paralysie habituelle.",
-    "primary": "Commencer",
+    "primary": "Écrire votre première spec",
     "secondary": "Voir sur GitHub",
     "beforeLabel": "// sans specs",
     "afterLabel": "// spec.md"
@@ -27,21 +27,21 @@
     "kicker": "La boucle des 3 artefacts",
     "heading": "Trois fichiers. Une seule source de vérité.",
     "spec": {
-      "title": "Le quoi",
+      "title": "Quoi construire",
       "tagline": "Problème, audience, critères d'acceptation, non-objectifs.",
       "b1": "Survit aux refactors et aux pivots de stack",
       "b2": "8 sections canoniques dans un ordre fixe",
       "b3": "Chaque AC est testable par quelque chose de concret"
     },
     "plan": {
-      "title": "Le comment",
+      "title": "Comment le construire",
       "tagline": "Choix de stack, architecture, contrats de données, sécurité.",
       "b1": "Argumente chaque décision non-triviale en une phrase",
       "b2": "Rend les trade-offs explicites — aucune supposition cachée",
       "b3": "Évolue avec le projet (contrairement à la spec)"
     },
     "tasks": {
-      "title": "Les étapes",
+      "title": "Quoi faire ensuite",
       "tagline": "Atomiques, vérifiables, traçables vers un AC.",
       "b1": "Chaque tâche est réalisable en ≤ 30 minutes",
       "b2": "Référence l'AC qu'elle satisfait",
@@ -50,7 +50,7 @@
   },
   "personas": {
     "kicker": "Pensé pour",
-    "heading": "Trois profils qui livrent plus vite avec ça.",
+    "heading": "Pensé pour les devs qui livrent.",
     "solo": {
       "title": "Devs solo",
       "lead": "Tuez la paralysie de la page blanche sur chaque nouveau projet.",
@@ -79,7 +79,7 @@
     "s1Label": "Artefacts par feature",
     "s1Hint": "spec, plan, tasks — pas plus, pas moins.",
     "s2Label": "Sections canoniques",
-    "s2Hint": "Sautez-en une et vous sautez la réflexion.",
+    "s2Hint": "Chacune documente une décision qui mérite d'être écrite.",
     "s3Label": "Durée max d'une tâche",
     "s3Hint": "Plus grand, ça se découpe. Sans exception.",
     "s4Label": "Dogfoodé",
