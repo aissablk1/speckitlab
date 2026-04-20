@@ -97,7 +97,7 @@ export const dict = {
     github: { en: 'View on GitHub', fr: 'Voir sur GitHub' },
   },
   footer: {
-    built: { en: 'Built with Spec-Kit.', fr: 'Construit avec Spec-Kit.' },
+    built: { en: 'Built with \u2665', fr: 'Construit avec \u2665' },
     rights: {
       en: '© 2026 A\u00EFssa Belkoussa — MIT.',
       fr: '© 2026 A\u00EFssa Belkoussa — MIT.',
