@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import matter from 'gray-matter'
+import type { Locale } from '@/lib/i18n/dict'
 
 const DOCS_ROOT = path.join(process.cwd(), 'content/docs')
 
@@ -9,12 +10,12 @@ export type DocMeta = {
   title: string
   description?: string
   order?: number
-  locale: 'en' | 'fr'
+  locale: Locale
 }
 
 export type Doc = DocMeta & { body: string }
 
-function baseDirFor(locale: 'en' | 'fr') {
+function baseDirFor(locale: Locale) {
   return locale === 'fr' ? path.join(DOCS_ROOT, 'fr') : DOCS_ROOT
 }
 
@@ -40,7 +41,7 @@ async function walk(dir: string, rel: string[] = []): Promise<string[]> {
   return out
 }
 
-export async function getAllDocs(locale: 'en' | 'fr'): Promise<DocMeta[]> {
+export async function getAllDocs(locale: Locale): Promise<DocMeta[]> {
   const base = baseDirFor(locale)
   const files = await walk(base)
   const items: DocMeta[] = []
@@ -59,7 +60,7 @@ export async function getAllDocs(locale: 'en' | 'fr'): Promise<DocMeta[]> {
   return items
 }
 
-export async function getDoc(locale: 'en' | 'fr', slug: string[]): Promise<Doc | null> {
+export async function getDoc(locale: Locale, slug: string[]): Promise<Doc | null> {
   const base = baseDirFor(locale)
   const filePath = path.join(base, `${slug.join('/')}.mdx`)
   try {
@@ -74,6 +75,8 @@ export async function getDoc(locale: 'en' | 'fr', slug: string[]): Promise<Doc |
       body: content,
     }
   } catch {
+    // Fallback to default locale if FR version missing
+    if (locale !== 'en') return getDoc('en', slug)
     return null
   }
 }
@@ -83,7 +86,7 @@ export type SidebarGroup = {
   items: { slug: string[]; title: string }[]
 }
 
-export async function getSidebar(locale: 'en' | 'fr'): Promise<SidebarGroup[]> {
+export async function getSidebar(locale: Locale): Promise<SidebarGroup[]> {
   const docs = await getAllDocs(locale)
   const topLevel = docs.filter((d) => d.slug.length === 1)
   const concepts = docs.filter((d) => d.slug[0] === 'concepts')

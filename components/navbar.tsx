@@ -1,13 +1,15 @@
+'use client'
+
+import Link from 'next/link'
 import { Github } from 'lucide-react'
-import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { LocaleSwitcher } from '@/components/locale-switcher'
 import { Logo } from '@/components/logo'
+import { useT } from '@/lib/i18n/client'
 
 export function Navbar() {
-  const t = useTranslations('nav')
+  const n = useT().nav
 
   return (
     <div className="sticky top-4 z-40 w-full px-3 sm:px-4 pt-1 pointer-events-none">
@@ -22,13 +24,13 @@ export function Navbar() {
 
           <nav className="hidden md:flex items-center gap-0.5 text-[13px] text-muted-foreground">
             <Link href="/docs/getting-started" className="px-2.5 py-1 rounded-full hover:text-foreground hover:bg-accent/60 transition-colors">
-              {t('gettingStarted')}
+              {n.gettingStarted}
             </Link>
             <Link href="/docs/concepts/first-spec" className="px-2.5 py-1 rounded-full hover:text-foreground hover:bg-accent/60 transition-colors">
-              {t('concepts')}
+              {n.concepts}
             </Link>
             <Link href="/docs/templates/spec" className="px-2.5 py-1 rounded-full hover:text-foreground hover:bg-accent/60 transition-colors">
-              {t('templates')}
+              {n.templates}
             </Link>
           </nav>
         </div>

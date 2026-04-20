@@ -1,41 +1,37 @@
-import { useTranslations } from 'next-intl'
+'use client'
+
+import { useT } from '@/lib/i18n/client'
 
 export function SpecShowcase() {
-  const t = useTranslations('showcase')
+  const s = useT().showcase
 
   return (
     <section className="skl-showcase">
       <div className="mx-auto max-w-6xl px-6 lg:px-8 py-24 sm:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-20 items-start">
-          {/* Left : narrative */}
           <div className="lg:sticky lg:top-28">
             <div className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground mb-4">
-              01 &mdash; {t('kicker')}
+              01 &mdash; {s.kicker}
             </div>
-            <h2 className="skl-ed-h2">{t('heading')}</h2>
-            <p className="mt-6 text-[15.5px] leading-[1.65] text-muted-foreground">
-              {t('para1')}
-            </p>
-            <p className="mt-5 text-[15.5px] leading-[1.65] text-muted-foreground">
-              {t('para2')}
-            </p>
+            <h2 className="skl-ed-h2">{s.heading}</h2>
+            <p className="mt-6 text-[15.5px] leading-[1.65] text-muted-foreground">{s.para1}</p>
+            <p className="mt-5 text-[15.5px] leading-[1.65] text-muted-foreground">{s.para2}</p>
             <dl className="mt-8 space-y-3 text-[14px]">
               <div className="flex gap-6">
-                <dt className="w-24 font-mono text-[12px] text-muted-foreground">{t('metric1Label')}</dt>
-                <dd className="text-foreground">{t('metric1Value')}</dd>
+                <dt className="w-24 font-mono text-[12px] text-muted-foreground">{s.metric1Label}</dt>
+                <dd className="text-foreground">{s.metric1Value}</dd>
               </div>
               <div className="flex gap-6">
-                <dt className="w-24 font-mono text-[12px] text-muted-foreground">{t('metric2Label')}</dt>
-                <dd className="text-foreground">{t('metric2Value')}</dd>
+                <dt className="w-24 font-mono text-[12px] text-muted-foreground">{s.metric2Label}</dt>
+                <dd className="text-foreground">{s.metric2Value}</dd>
               </div>
               <div className="flex gap-6">
-                <dt className="w-24 font-mono text-[12px] text-muted-foreground">{t('metric3Label')}</dt>
-                <dd className="text-foreground">{t('metric3Value')}</dd>
+                <dt className="w-24 font-mono text-[12px] text-muted-foreground">{s.metric3Label}</dt>
+                <dd className="text-foreground">{s.metric3Value}</dd>
               </div>
             </dl>
           </div>
 
-          {/* Right : spec.md rendered */}
           <div className="skl-code">
             <div className="skl-code__head">
               <span className="skl-code__dots" aria-hidden>

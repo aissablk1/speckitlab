@@ -1,9 +1,12 @@
-import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/navigation'
+'use client'
+
+import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
+import { useT } from '@/lib/i18n/client'
 
 export function Hero() {
-  const t = useTranslations('hero')
+  const t = useT()
+  const h = t.hero
 
   return (
     <section className="skl-hero-ed">
@@ -12,20 +15,18 @@ export function Hero() {
         <div className="flex items-center gap-3 mb-10">
           <span className="skl-dot" aria-hidden />
           <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            {t('eyebrow')}
+            {h.eyebrow}
           </span>
         </div>
 
         <h1 className="skl-ed-h1">
-          {t('titleStart')}
-          <span className="skl-ed-h1__em">{t('titleEm')}</span>
-          {t('titleEnd')}
+          {h.titleStart}
+          <span className="skl-ed-h1__em">{h.titleEm}</span>
+          {h.titleEnd}
         </h1>
 
         <div className="mt-10 max-w-xl">
-          <p className="text-[17px] leading-[1.55] text-muted-foreground">
-            {t('subtitle')}
-          </p>
+          <p className="text-[17px] leading-[1.55] text-muted-foreground">{h.subtitle}</p>
         </div>
 
         <div className="mt-10 flex items-center gap-6 text-[15px]">
@@ -33,14 +34,14 @@ export function Hero() {
             href="/docs/getting-started"
             className="group inline-flex items-center gap-1.5 font-medium text-foreground underline underline-offset-[6px] decoration-foreground/20 hover:decoration-foreground transition-colors"
           >
-            {t('primary')}
+            {h.primary}
             <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
           <Link
             href="/docs/concepts/first-spec"
             className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
           >
-            See an example
+            {h.secondary}
           </Link>
         </div>
       </div>

@@ -1,7 +1,7 @@
 'use client'
 
-import { usePathname } from '@/i18n/navigation'
-import { Link } from '@/i18n/navigation'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import type { SidebarGroup } from '@/lib/docs'
 

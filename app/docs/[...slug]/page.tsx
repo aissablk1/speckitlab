@@ -1,38 +1,34 @@
 import { notFound } from 'next/navigation'
-import { setRequestLocale } from 'next-intl/server'
 import { getAllDocs, getDoc, getSidebar } from '@/lib/docs'
 import { DocsSidebar } from '@/components/docs/sidebar'
 import { MDX } from '@/components/docs/mdx'
-import { routing } from '@/i18n/routing'
+import { getLocale } from '@/lib/i18n/server'
 
-type Props = {
-  params: Promise<{ locale: string; slug: string[] }>
-}
+type Props = { params: Promise<{ slug: string[] }> }
 
 export async function generateStaticParams() {
-  const all: { locale: string; slug: string[] }[] = []
-  for (const locale of routing.locales) {
-    const docs = await getAllDocs(locale as 'en' | 'fr')
-    for (const d of docs) all.push({ locale, slug: d.slug })
-  }
-  return all
+  const docs = await getAllDocs('en')
+  return docs.map((d) => ({ slug: d.slug }))
 }
 
+export const dynamic = 'force-dynamic'
+
 export async function generateMetadata({ params }: Props) {
-  const { locale, slug } = await params
-  const doc = await getDoc(locale as 'en' | 'fr', slug)
+  const { slug } = await params
+  const locale = await getLocale()
+  const doc = await getDoc(locale, slug)
   if (!doc) return {}
   return { title: doc.title, description: doc.description }
 }
 
 export default async function DocPage({ params }: Props) {
-  const { locale, slug } = await params
-  setRequestLocale(locale)
-  const loc = locale as 'en' | 'fr'
-  const doc = await getDoc(loc, slug)
+  const { slug } = await params
+  const locale = await getLocale()
+
+  const doc = await getDoc(locale, slug)
   if (!doc) notFound()
 
-  const groups = await getSidebar(loc)
+  const groups = await getSidebar(locale)
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
