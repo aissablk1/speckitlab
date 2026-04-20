@@ -172,6 +172,8 @@
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  margin-top: -5rem;
+  padding-top: 5rem;
   border-bottom: 1px solid var(--border);
 }
 
@@ -183,9 +185,9 @@
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, black 40%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, black 40%, transparent 80%);
-  opacity: 0.6;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 10%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 10%, black 45%, transparent 85%);
+  opacity: 0.7;
 }
 
 .skl-dot {
