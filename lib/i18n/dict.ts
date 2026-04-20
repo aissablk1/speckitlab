@@ -97,11 +97,22 @@ export const dict = {
     github: { en: 'View on GitHub', fr: 'Voir sur GitHub' },
   },
   footer: {
-    built: { en: 'Built with \u2665', fr: 'Construit avec \u2665' },
-    rights: {
-      en: '© 2026 A\u00EFssa Belkoussa — MIT.',
-      fr: '© 2026 A\u00EFssa Belkoussa — MIT.',
+    colophon: {
+      en: 'An opinionated JavaScript companion to GitHub\u2019s Spec-Kit. Built with Claude Code by A\u00EFssa Belkoussa. The source lives at github.com/aissablk1/speckitlab. MIT licensed.',
+      fr: 'Un compagnon JavaScript opinionated du Spec-Kit de GitHub. Construit avec Claude Code par A\u00EFssa Belkoussa. La source vit sur github.com/aissablk1/speckitlab. Sous licence MIT.',
     },
+    gettingStarted: { en: 'Getting started', fr: 'Démarrage' },
+    concepts: { en: 'Concepts', fr: 'Concepts' },
+    templates: { en: 'Templates', fr: 'Templates' },
+    github: { en: 'GitHub', fr: 'GitHub' },
+    specKit: { en: 'Spec-Kit (original)', fr: 'Spec-Kit (original)' },
+    rights: {
+      en: '© 2026 A\u00EFssa Belkoussa',
+      fr: '© 2026 A\u00EFssa Belkoussa',
+    },
+    version: { en: 'v0.3', fr: 'v0.3' },
+    locale: { en: 'English', fr: 'Français' },
+    signature: { en: 'Built with \u2665', fr: 'Construit avec \u2665' },
   },
   docs: {
     onThisPage: { en: 'On this page', fr: 'Sur cette page' },
