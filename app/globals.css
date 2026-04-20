@@ -150,12 +150,6 @@
   display: inline-block;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: inset 0 0 0 1px oklch(0% 0 0 / 0.06);
-  transition: box-shadow 0.2s;
-}
-
-.dark .skl-logo-svg {
-  box-shadow: inset 0 0 0 1px oklch(100% 0 0 / 0.06);
 }
 
 .skl-logo-svg .skl-logo-bg {
@@ -169,14 +163,6 @@
 
 .dark .skl-logo-svg .skl-logo-bg { fill: #1a1d26; }
 .dark .skl-logo-svg .skl-logo-bar { fill: #8cc8ff; }
-
-.skl-logo:hover .skl-logo-svg {
-  box-shadow: inset 0 0 0 1px oklch(0% 0 0 / 0.12), 0 0 0 3px oklch(68% 0.16 230 / 0.12);
-}
-
-.dark .skl-logo:hover .skl-logo-svg {
-  box-shadow: inset 0 0 0 1px oklch(100% 0 0 / 0.12), 0 0 0 3px oklch(72% 0.16 230 / 0.18);
-}
 
 /* =========================================================================
    Editorial landing (Linear/Resend/Stripe-grade)
