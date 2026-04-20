@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { Logo } from '@/components/logo'
+import { LocaleSwitcher } from '@/components/locale-switcher'
+import { ThemeToggle } from '@/components/theme-toggle'
 import { useT } from '@/lib/i18n/client'
 
 export function Footer() {
@@ -61,7 +63,7 @@ export function Footer() {
         </nav>
 
         {/* Admin line */}
-        <div className="mt-10 pt-6 border-t border-border/50 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-[12.5px] font-mono text-muted-foreground">
+        <div className="mt-10 pt-6 border-t border-border/50 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-[12.5px] font-mono text-muted-foreground">
           <div className="flex items-center gap-4">
             <span>
               © <span className="tabular-nums">{year}</span> {f.rightsHolder}
@@ -71,7 +73,12 @@ export function Footer() {
             <span className="text-border" aria-hidden>·</span>
             <span>MIT</span>
           </div>
-          <span className="opacity-70">{f.signature}</span>
+          <div className="flex items-center gap-3">
+            <LocaleSwitcher />
+            <ThemeToggle />
+            <span className="text-border" aria-hidden>·</span>
+            <span className="opacity-70">{f.signature}</span>
+          </div>
         </div>
       </div>
     </footer>
