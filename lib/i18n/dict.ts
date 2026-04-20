@@ -124,6 +124,25 @@ export const dict = {
     groupConcepts: { en: 'Concepts', fr: 'Concepts' },
     groupTemplates: { en: 'Templates', fr: 'Templates' },
   },
+  guard: {
+    heading: { en: 'Viewport too small', fr: 'Écran trop petit' },
+    narrow: {
+      en: 'This site is designed for wider displays. Please use a desktop, a tablet in landscape, or rotate your device.',
+      fr: 'Ce site est conçu pour des écrans plus larges. Utilisez un ordinateur, une tablette en paysage, ou faites pivoter votre appareil.',
+    },
+    short: {
+      en: 'This site is designed for taller viewports. Please use a larger window or a different device.',
+      fr: 'Ce site est conçu pour des fenêtres plus hautes. Utilisez une fenêtre plus grande ou un autre appareil.',
+    },
+    both: {
+      en: 'This site is designed for larger screens. Please switch to a desktop or tablet.',
+      fr: 'Ce site est conçu pour des écrans plus grands. Passez sur un ordinateur ou une tablette.',
+    },
+    hint: {
+      en: 'The guard disappears as soon as your window exceeds 640 × 560 px.',
+      fr: 'Le message disparaît dès que votre fenêtre dépasse 640 × 560 px.',
+    },
+  },
 } as const satisfies DeepDict
 
 type DeepDict = { [key: string]: Leaf | DeepDict }

@@ -8,6 +8,7 @@ import { LocaleProvider } from '@/lib/i18n/client'
 import { getLocale } from '@/lib/i18n/server'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
+import { ScreenGuard } from '@/components/screen-guard'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -41,6 +42,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <LocaleProvider initial={locale}>
             <FaviconSync />
+            <ScreenGuard />
             <div className="relative flex min-h-screen flex-col">
               <Navbar />
               <main className="flex-1">{children}</main>
