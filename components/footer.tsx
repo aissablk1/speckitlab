@@ -7,6 +7,7 @@ import { useT } from '@/lib/i18n/client'
 
 export function Footer() {
   const f = useT().footer
+  const year = new Date().getFullYear()
 
   return (
     <footer className="mt-32 border-t border-border/60">
@@ -62,7 +63,9 @@ export function Footer() {
         {/* Admin line */}
         <div className="mt-10 pt-6 border-t border-border/50 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-[12.5px] font-mono text-muted-foreground">
           <div className="flex items-center gap-4">
-            <span>{f.rights}</span>
+            <span>
+              © <span className="tabular-nums">{year}</span> {f.rightsHolder}
+            </span>
             <span className="text-border" aria-hidden>·</span>
             <span className="tabular-nums">{f.version}</span>
             <span className="text-border" aria-hidden>·</span>

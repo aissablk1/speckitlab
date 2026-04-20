@@ -106,9 +106,9 @@ export const dict = {
     templates: { en: 'Templates', fr: 'Templates' },
     github: { en: 'GitHub', fr: 'GitHub' },
     specKit: { en: 'Spec-Kit (original)', fr: 'Spec-Kit (original)' },
-    rights: {
-      en: '© 2026 A\u00EFssa Belkoussa',
-      fr: '© 2026 A\u00EFssa Belkoussa',
+    rightsHolder: {
+      en: 'A\u00EFssa Belkoussa',
+      fr: 'A\u00EFssa Belkoussa',
     },
     version: { en: 'v0.3', fr: 'v0.3' },
     locale: { en: 'English', fr: 'Français' },
