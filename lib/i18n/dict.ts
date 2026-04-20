@@ -112,7 +112,7 @@ export const dict = {
     },
     version: { en: 'v0.3', fr: 'v0.3' },
     locale: { en: 'English', fr: 'Français' },
-    signature: { en: 'Built with \u2665', fr: 'Construit avec \u2665' },
+    signature: { en: 'Built with \uD83D\uDC99', fr: 'Construit avec \uD83D\uDC99' },
   },
   docs: {
     onThisPage: { en: 'On this page', fr: 'Sur cette page' },
