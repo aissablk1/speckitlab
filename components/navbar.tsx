@@ -12,13 +12,19 @@ export function Navbar() {
     <div className="sticky top-3 z-40 w-full px-3 sm:px-4 pointer-events-none">
       <header className="skl-navbar pointer-events-auto mx-auto flex h-12 max-w-5xl items-center justify-between gap-3 rounded-full border border-border/70 bg-background/70 px-2.5 backdrop-blur-xl supports-[backdrop-filter]:bg-background/50 shadow-[0_1px_2px_oklch(0%_0_0/0.04),0_8px_24px_-12px_oklch(0%_0_0/0.12)] dark:shadow-[0_1px_2px_oklch(0%_0_0/0.4),0_12px_32px_-8px_oklch(0%_0_0/0.5)]">
         <div className="flex items-center gap-5 pl-1.5">
-          <Link href="/" className="flex items-center gap-2 font-medium tracking-tight">
-            <span className="relative inline-block size-[22px] rounded-[5px] bg-foreground/95 overflow-hidden">
-              <span className="absolute inset-x-[4px] top-[4px] h-[2.5px] rounded-[1px]" style={{ background: 'oklch(72% 0.16 230)' }} />
-              <span className="absolute inset-x-[4px] top-[9.5px] h-[2.5px] rounded-[1px]" style={{ background: 'oklch(72% 0.16 230 / 0.72)' }} />
-              <span className="absolute inset-x-[4px] top-[15px] h-[2.5px] rounded-[1px]" style={{ background: 'oklch(72% 0.16 230 / 0.45)' }} />
+          <Link href="/" className="flex items-center gap-2 tracking-tight" aria-label="speckitlab">
+            <span
+              className="relative inline-block size-[22px] rounded-[6px] overflow-hidden ring-1 ring-black/5 dark:ring-white/5"
+              style={{ background: 'oklch(96% 0.006 230)' }}
+              aria-hidden
+            >
+              <span className="absolute inset-x-[4px] top-[4px] h-[2.5px] rounded-[1px]" style={{ background: 'oklch(68% 0.16 230)' }} />
+              <span className="absolute inset-x-[4px] top-[9.5px] h-[2.5px] rounded-[1px]" style={{ background: 'oklch(68% 0.16 230 / 0.78)' }} />
+              <span className="absolute inset-x-[4px] top-[15px] h-[2.5px] rounded-[1px]" style={{ background: 'oklch(68% 0.16 230 / 0.55)' }} />
             </span>
-            <span className="text-[14px] font-semibold leading-none">speckit<span className="opacity-55">lab</span></span>
+            <span className="text-[14px] leading-none">
+              <span className="font-medium">speckit</span><span className="font-extrabold">lab</span>
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-0.5 text-[13px] text-muted-foreground">
